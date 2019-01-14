@@ -2789,7 +2789,7 @@
                         "exec": [
                           "const utils = eval(globals.loadUtils);",
                           "",
-                          "utils.getToken(\"customers\", pm.globals.get(\"clientid_1\"), pm.globals.get(\"secret_1\"));",
+                          "utils.getToken(\"customers\", pm.environment.get(\"clientId_appSncf\"), pm.environment.get(\"secret_appSncf\"));",
                           ""
                         ],
                         "type": "text/javascript"
