@@ -3817,7 +3817,8 @@
                             "id": "0a4d398d-5a31-46a9-9a86-afd121d8b683",
                             "exec": [
                               "let utils = eval(globals.loadUtils);",
-                              "utils.getToken(\"customers\", pm.environment.get(\"clientId_appSncf\"), pm.environment.get(\"secret_appSncf\"));"
+                              "utils.getToken(\"search\", pm.environment.get(\"clientId_appSncf\"), pm.environment.get(\"secret_appSncf\"));",
+                              ""
                             ],
                             "type": "text/javascript"
                           }
