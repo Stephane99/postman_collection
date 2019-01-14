@@ -103,8 +103,6 @@
                         "exec": [
                           "const json = pm.response.json();",
                           "",
-                          "utils.getToken(\"customers\", pm.environment.get(\"clientId_appSncf\"), pm.environment.get(\"secret_appSncf\"));",
-                          "",
                           "const utils = eval(globals.loadUtils);",
                           "utils.checkResponseCodeAndStatus(201, \"SUCCESS\");",
                           ""
