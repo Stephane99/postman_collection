@@ -2740,6 +2740,8 @@
                         "exec": [
                           "const utils = eval(globals.loadUtils);",
                           "",
+                          "utils.getToken(\"customers\", pm.environment.get(\"clientId_appSncf\"), pm.environment.get(\"secret_appSncf\"));",
+                          "",
                           "const uniqueId = utils.getUniqueIdBasedOnDate();",
                           "pm.globals.set(\"external_id_1\", uniqueId);"
                         ],
