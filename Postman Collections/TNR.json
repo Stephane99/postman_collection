@@ -3766,50 +3766,76 @@
                       "name": "post aroundme Smovengo 10m",
                       "event": [
                         {
-                          "listen": "prerequest",
+                          "listen": "test",
                           "script": {
-                            "id": "7d66b54b-de7f-4444-a252-6c8a2c5b9418",
+                            "id": "0c298ebc-95ca-4ce5-9c9e-9da35ce65e31",
                             "exec": [
-                              ""
+                              "const retryCount = pm.environment.get('get_search_retry_count');",
+                              "pm.environment.set('get_search_retry_count', retryCount + 1);",
+                              "const responseSchema = {",
+                              "  wish: 'object',",
+                              "  status: 'string',",
+                              "  results: 'array'",
+                              "};",
+                              "",
+                              "const json = pm.response.json();",
+                              "",
+                              "const utils = eval(globals.loadUtils);",
+                              "utils.checkResponseCode(200);",
+                              "",
+                              "// todo: revoir ce check",
+                              "pm.test('response is valid', function() {",
+                              "    pm.expect(tv4.validate(json, responseSchema)).to.be.true;",
+                              "});",
+                              "",
+                              "if (json.status === 'IN_PROGRESS' && retryCount < 15) {",
+                              "    console.log(\"IN_PROGRESS\");",
+                              "",
+                              "    utils.alertWhenResponseCodeNotEqualTo(200);",
+                              "",
+                              "    utils.sleep(1000); // wait 1 seconde",
+                              "    postman.setNextRequest('get aroundme velib 10m');",
+                              "",
+                              "} else if (json.status === 'COMPLETE') {",
+                              "",
+                              "    const radius = json.wish.radius;",
+                              "    const smovengoResultsLength = json.results.find(({origin}) => origin === 'smovengo').results.length;",
+                              "    pm.test(`1 smovengo result for a 10 meters radius`, function () {",
+                              "       pm.expect(smovengoResultsLength).to.equal(1);",
+                              "    });",
+                              "}else{",
+                              "    tests['ERROR : Last response has a status \"NOT COMPLETE\"'] = false;",
+                              "}"
                             ],
                             "type": "text/javascript"
                           }
                         },
                         {
-                          "listen": "test",
+                          "listen": "prerequest",
                           "script": {
-                            "id": "d423be3a-8cda-4bcc-a629-bcbbbaf62fc0",
+                            "id": "0a4d398d-5a31-46a9-9a86-afd121d8b683",
                             "exec": [
-                              "const json = pm.response.json();",
-                              "",
-                              "const utils = eval(globals.loadUtils);",
-                              "utils.checkResponseCode(201);",
-                              "",
-                              "pm.test(\"searchId exists\", function () {",
-                              "    pm.response.to.have.jsonBody('searchId');",
-                              "    pm.environment.set('searchId', json.searchId);",
-                              "    pm.environment.set('get_search_retry_count', 0);",
-                              "    postman.setNextRequest('get aroundme velib 10m');",
-                              "});",
-                              ""
+                              "let utils = eval(globals.loadUtils);",
+                              "utils.getToken(\"customers\", pm.environment.get(\"clientId_appSncf\"), pm.environment.get(\"secret_appSncf\"));"
                             ],
                             "type": "text/javascript"
                           }
                         }
                       ],
                       "request": {
-                        "method": "POST",
+                        "method": "GET",
                         "header": [
                           {
                             "key": "Content-Type",
-                            "value": "application/json"
+                            "type": "text",
+                            "value": "application/xml"
                           }
                         ],
                         "body": {
                           "mode": "raw",
                           "raw": "{\n\t\t\"origin\": {\n\t\t\t\"latitude\": 48.862534,\n    \t\t\"longitude\": 2.354310\n\t\t},\n\t\t\"radius\": 10\n}"
                         },
-                        "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/search/aroundme"
+                        "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/search/aroundme/{{searchId}}"
                       },
                       "response": [
                         {
@@ -4138,8 +4164,10 @@
                           "script": {
                             "id": "7d66b54b-de7f-4444-a252-6c8a2c5b9418",
                             "exec": [
-                              "const moment = require('moment');",
+                              "let utils = eval(globals.loadUtils);",
+                              "utils.getToken(\"customers\", pm.environment.get(\"clientId_appSncf\"), pm.environment.get(\"secret_appSncf\"));",
                               "",
+                              "const moment = require('moment');",
                               "pm.environment.set('itinerary_search_date', moment().add(1, \"hours\"))",
                               ""
                             ],
