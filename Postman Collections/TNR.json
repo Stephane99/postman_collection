@@ -31,8 +31,9 @@
                         "exec": [
                           "const utils = eval(globals.loadUtils);",
                           "",
-                          "const uniqueId = utils.getUniqueIdBasedOnDate();",
+                          "utils.getToken(\"customers\", pm.environment.get(\"clientId_appSncf\"), pm.environment.get(\"secret_appSncf\"));",
                           "",
+                          "const uniqueId = utils.getUniqueIdBasedOnDate();",
                           "pm.variables.set('uniqueId', uniqueId)",
                           "pm.environment.set('external_id', uniqueId);"
                         ],
@@ -101,6 +102,8 @@
                         "id": "ef7c7261-e511-4fc1-acf0-f2f3cd845d1b",
                         "exec": [
                           "const json = pm.response.json();",
+                          "",
+                          "utils.getToken(\"customers\", pm.environment.get(\"clientId_appSncf\"), pm.environment.get(\"secret_appSncf\"));",
                           "",
                           "const utils = eval(globals.loadUtils);",
                           "utils.checkResponseCodeAndStatus(201, \"SUCCESS\");",
@@ -215,6 +218,8 @@
                         "id": "75f8a2ed-9f6a-46b4-91bb-d9f36ea7d45f",
                         "exec": [
                           "const utils = eval(globals.loadUtils);",
+                          "",
+                          "utils.getToken(\"customers\", pm.environment.get(\"clientId_appSncf\"), pm.environment.get(\"secret_appSncf\"));",
                           "",
                           "const uniqueId = utils.getUniqueIdBasedOnDate(); // unique id on 12 digits",
                           "pm.environment.set('external_id', uniqueId);",
