@@ -4473,7 +4473,7 @@
                             "id": "7d66b54b-de7f-4444-a252-6c8a2c5b9418",
                             "exec": [
                               "let utils = eval(globals.loadUtils);",
-                              "utils.getToken(\"customers\", pm.environment.get(\"clientId_appSncf\"), pm.environment.get(\"secret_appSncf\"));",
+                              "utils.getToken(\"search\", pm.environment.get(\"clientId_appSncf\"), pm.environment.get(\"secret_appSncf\"));",
                               "",
                               "const moment = require('moment');",
                               "pm.environment.set('itinerary_search_date', moment().add(1, \"hours\"))"
