@@ -3462,7 +3462,10 @@
                             "id": "7d66b54b-de7f-4444-a252-6c8a2c5b9418",
                             "exec": [
                               "let utils = eval(globals.loadUtils);",
-                              "utils.getToken(\"customers\", pm.environment.get(\"clientId\"), pm.environment.get(\"secret\")); // Client = Monitor"
+                              "//utils.getToken(\"customers\", pm.environment.get(\"clientId\"), pm.environment.get(\"secret\")); // Client = Monitor",
+                              "utils.getToken(\"customers\", pm.environment.get(\"clientId_appSncf\"), pm.environment.get(\"secret_appSncf\"));",
+                              "utils.getToken(\"customers\", pm.environment.get(\"clientId_oss44\"), pm.environment.get(\"secret_oss44\"));",
+                              ""
                             ],
                             "type": "text/javascript"
                           }
