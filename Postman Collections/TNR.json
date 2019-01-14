@@ -1101,6 +1101,8 @@
                           "",
                           "getCustomerUtils.assertGetCustomer();",
                           "",
+                          "pm.test.skip('JIRA 344 - [Customers] Mauvaise gestion du cache sur le GET d\\'un customer', function() {});",
+                          "",
                           "pm.test('customer phoneNumber', function() {",
                           "    pm.expect(json.phoneNumber).to.equal(\"0601010101\");",
                           "});",
@@ -1120,8 +1122,7 @@
                           "pm.test('customer lastName', function() {",
                           "    pm.expect(json.lastName).to.equal(\"SEYDOUX\");",
                           "});",
-                          "",
-                          "pm.test.skip('JIRA 344 - [Customers] Mauvaise gestion du cache sur le GET d\\'un customer', function() {});"
+                          ""
                         ],
                         "type": "text/javascript"
                       }
