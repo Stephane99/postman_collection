@@ -2789,7 +2789,7 @@
                         "exec": [
                           "const utils = eval(globals.loadUtils);",
                           "",
-                          "utils.getToken(\"customers\", pm.environment.get(\"clientId_appSncf\"), pm.environment.get(\"secret_appSncf\"));",
+                          "//utils.getToken(\"customers\", pm.environment.get(\"clientId_appSncf\"), pm.environment.get(\"secret_appSncf\"));",
                           ""
                         ],
                         "type": "text/javascript"
@@ -2890,6 +2890,8 @@
                         "id": "75f8a2ed-9f6a-46b4-91bb-d9f36ea7d45f",
                         "exec": [
                           "const utils = eval(globals.loadUtils);",
+                          "",
+                          "utils.getToken(\"customers\", pm.environment.get(\"clientId_appSncf\"), pm.environment.get(\"secret_appSncf\"));",
                           "",
                           "const externalId = utils.getUniqueIdBasedOnDate();",
                           "console.log(\"externalId : \" + externalId);",
@@ -3246,6 +3248,8 @@
                         "id": "75f8a2ed-9f6a-46b4-91bb-d9f36ea7d45f",
                         "exec": [
                           "const utils = eval(globals.loadUtils);",
+                          "",
+                          "utils.getToken(\"customers\", pm.environment.get(\"clientId_appSncf\"), pm.environment.get(\"secret_appSncf\"));",
                           "",
                           "const externalId = utils.getUniqueIdBasedOnDate();",
                           "console.log(\"externalId : \" + externalId);",
