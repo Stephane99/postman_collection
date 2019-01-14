@@ -1041,7 +1041,7 @@
                       "script": {
                         "id": "75f8a2ed-9f6a-46b4-91bb-d9f36ea7d45f",
                         "exec": [
-                          "//const utils = eval(globals.loadUtils);",
+                          "const utils = eval(globals.loadUtils);",
                           ""
                         ],
                         "type": "text/javascript"
@@ -1124,7 +1124,7 @@
                       "script": {
                         "id": "e1d87fef-2acf-49a3-b1ac-f90cdc75f49b",
                         "exec": [
-                          "//const utils = eval(globals.loadUtils);",
+                          "const utils = eval(globals.loadUtils);",
                           "",
                           ""
                         ],
