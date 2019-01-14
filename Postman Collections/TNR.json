@@ -3463,7 +3463,7 @@
                             "exec": [
                               "let utils = eval(globals.loadUtils);",
                               "//utils.getToken(\"customers\", pm.environment.get(\"clientId\"), pm.environment.get(\"secret\")); // Client = Monitor",
-                              "utils.getToken(\"customers\", pm.environment.get(\"clientId_appSncf\"), pm.environment.get(\"secret_appSncf\"));",
+                              "//utils.getToken(\"customers\", pm.environment.get(\"clientId_appSncf\"), pm.environment.get(\"secret_appSncf\"));",
                               "utils.getToken(\"customers\", pm.environment.get(\"clientId_oss44\"), pm.environment.get(\"secret_oss44\"));",
                               ""
                             ],
