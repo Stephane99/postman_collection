@@ -3414,7 +3414,7 @@
             "id": "637219b3-3942-426e-85ae-066fe03f37c3",
             "type": "text/javascript",
             "exec": [
-              "let utils = eval(globals.loadUtils);",
+              "//let utils = eval(globals.loadUtils);",
               "//utils.getToken(\"customers\", pm.environment.get(\"clientId_appSncf\"), pm.environment.get(\"secret_appSncf\"));",
               ""
             ]
