@@ -1121,7 +1121,7 @@
                           "    pm.expect(json.lastName).to.equal(\"SEYDOUX\");",
                           "});",
                           "",
-                          "pm.test.skip('JIRA 327 - Champ Origin retourn\u00e9, mais non pr\u00e9sent dans le swagger ', function() {});"
+                          "pm.test.skip('JIRA 344 - [Customers] Mauvaise gestion du cache sur le GET d\\'un customer', function() {});"
                         ],
                         "type": "text/javascript"
                       }
