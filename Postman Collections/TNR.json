@@ -3829,13 +3829,14 @@
                         "header": [
                           {
                             "key": "Content-Type",
-                            "type": "text",
-                            "value": "application/xml"
+                            "name": "Content-Type",
+                            "value": "application/json",
+                            "type": "text"
                           }
                         ],
                         "body": {
                           "mode": "raw",
-                          "raw": "{\n\t\t\"origin\": {\n\t\t\t\"latitude\": 48.862534,\n    \t\t\"longitude\": 2.354310\n\t\t},\n\t\t\"radius\": 10\n}"
+                          "raw": "{\n\t\t\"origin\": {\n\t\t\t\"latitude\": 48.823933,\n    \t\t\"longitude\": 2.260691\n\t\t},\n\t\t\"radius\": 10\n}"
                         },
                         "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/search/aroundme/{{searchId}}"
                       },
