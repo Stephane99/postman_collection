@@ -3406,7 +3406,7 @@
             "type": "text/javascript",
             "exec": [
               "let utils = eval(globals.loadUtils);",
-              "//utils.getToken(\"customers\", pm.environment.get(\"clientId_appSncf\"), pm.environment.get(\"secret_appSncf\"));",
+              "utils.getToken(\"customers\", pm.environment.get(\"clientId_appSncf\"), pm.environment.get(\"secret_appSncf\"));",
               ""
             ]
           }
