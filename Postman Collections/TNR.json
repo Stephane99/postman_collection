@@ -5194,8 +5194,8 @@
             "id": "405f62c8-6097-4dbc-881a-06031fc05da7",
             "type": "text/javascript",
             "exec": [
-              "let utils = eval(globals.loadUtils);",
-              "utils.getToken(\"search\", pm.environment.get(\"clientId\"), pm.environment.get(\"secret\"));"
+              "//let utils = eval(globals.loadUtils);",
+              "//utils.getToken(\"search\", pm.environment.get(\"clientId\"), pm.environment.get(\"secret\"));"
             ]
           }
         },
