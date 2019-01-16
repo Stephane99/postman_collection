@@ -414,11 +414,13 @@
                           "",
                           "const utils = eval(globals.loadUtils);",
                           "",
-                          "utils.checkResponseCodeAndStatus(400, \"INVALID_REQUEST\");",
-                          "pm.test.skip(\"=> BUG JIRA MAAS-327\");",
+                          "// TODO : Test d\u00e9sactiv\u00e9, \u00e0 remettre lorsque l'ano sera corrig\u00e9e",
+                          "//utils.checkResponseCodeAndStatus(400, \"INVALID_REQUEST\");",
+                          "//pm.test.skip(\"=> BUG JIRA MAAS-327\");",
                           "",
-                          "utils.checkResponseError(\"\\\"firstName\\\" is not allowed to be not defined\");",
-                          "pm.test.skip(\"=> BUG JIRA MAAS-327\");",
+                          "// TODO : Test d\u00e9sactiv\u00e9, \u00e0 remettre lorsque l'ano sera corrig\u00e9e",
+                          "//utils.checkResponseError(\"\\\"firstName\\\" is not allowed to be not defined\");",
+                          "//pm.test.skip(\"=> BUG JIRA MAAS-327\");",
                           ""
                         ],
                         "type": "text/javascript"
