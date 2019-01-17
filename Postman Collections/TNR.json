@@ -3368,56 +3368,6 @@
                     }
                   },
                   "response": []
-                },
-                {
-                  "_postman_id": "ef74ee96-3f89-4416-942d-39e45c9fede6",
-                  "name": "Post new Customer Copy",
-                  "event": [
-                    {
-                      "listen": "prerequest",
-                      "script": {
-                        "id": "75f8a2ed-9f6a-46b4-91bb-d9f36ea7d45f",
-                        "exec": [
-                          "const utils = eval(globals.loadUtils);",
-                          "",
-                          "utils.getToken(\"customers\", pm.environment.get(\"clientId_appSncf\"), pm.environment.get(\"secret_appSncf\"));",
-                          "",
-                          "const uniqueId = utils.getUniqueIdBasedOnDate();",
-                          "pm.environment.set('external_id', uniqueId);"
-                        ],
-                        "type": "text/javascript"
-                      }
-                    },
-                    {
-                      "listen": "test",
-                      "script": {
-                        "id": "4adb4a83-5ae7-4307-986e-f9bbfb105a60",
-                        "exec": [
-                          "const json = pm.response.json();",
-                          "",
-                          "const utils = eval(globals.loadUtils);",
-                          "utils.checkResponseCodeAndStatus(201, \"SUCCESS\");",
-                          ""
-                        ],
-                        "type": "text/javascript"
-                      }
-                    }
-                  ],
-                  "request": {
-                    "method": "POST",
-                    "header": [
-                      {
-                        "key": "Content-Type",
-                        "value": "application/json"
-                      }
-                    ],
-                    "body": {
-                      "mode": "raw",
-                      "raw": "{\n\t\"email\": \"jbalasko@oui.sncf\",\n\t\"firstName\": \"Josiane\",\n\t\"lastName\": \"Balascko\",\n\t\"phoneNumber\": \"0604040404\",\n\t\"externalId\": \"{{external_id}}\"\n}"
-                    },
-                    "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/customers"
-                  },
-                  "response": []
                 }
               ],
               "event": [
