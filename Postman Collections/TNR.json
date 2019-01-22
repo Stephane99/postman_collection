@@ -5485,6 +5485,25 @@
                 "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/search/itinerary/{{searchId}}"
               },
               "response": []
+            },
+            {
+              "_postman_id": "ff17039d-109c-4156-8a36-224c349ea014",
+              "name": "Post Order",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"origin\": {\n    \"latitude\": 0,\n    \"longitude\": 0\n  },\n  \"radius\": 0\n}"
+                },
+                "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/orders"
+              },
+              "response": []
             }
           ],
           "_postman_isSubFolder": true
