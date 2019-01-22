@@ -5575,7 +5575,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"origin\": {\n    \"latitude\": 0,\n    \"longitude\": 0\n  },\n  \"radius\": 0\n}"
+                  "raw": "{\n  \"customerId\": \"{{customerId}}\",\n  \"searchId\": \"{{searchId}}\",\n  \"proposalId\": \"{{proposalId}}\"\n}"
                 },
                 "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/orders"
               },
