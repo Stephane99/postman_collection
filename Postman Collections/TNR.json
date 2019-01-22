@@ -5579,6 +5579,7 @@
                       "",
                       "pm.test(\"Billet in response\", function () {",
                       "    const ebillet = json.transactions[0].partnerSpecificAttributes.ebillet;",
+                      "    pm.expect(ebillet).to.match(/^[0-9]{38}$/);",
                       "    console.log(json);",
                       "});",
                       ""
