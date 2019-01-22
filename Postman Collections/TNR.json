@@ -5559,7 +5559,7 @@
                       "const utils = eval(globals.loadUtils);",
                       "utils.getToken(\"orders\", pm.environment.get(\"clientId\"), pm.environment.get(\"secret\"));",
                       "",
-                      ""
+                      "console.log(json);"
                     ],
                     "type": "text/javascript"
                   }
