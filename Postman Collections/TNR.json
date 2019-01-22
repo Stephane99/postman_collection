@@ -5264,7 +5264,7 @@
             },
             {
               "_postman_id": "a41a7caf-c6fb-44c8-a17e-0b31500122fc",
-              "name": "Post Itinerary M\u00e9tro Villiers - A\u00e9roport Orly",
+              "name": "Order - Post Itinerary M\u00e9tro Villiers - A\u00e9roport Orly",
               "event": [
                 {
                   "listen": "prerequest",
@@ -5469,7 +5469,7 @@
             },
             {
               "_postman_id": "a6f90dea-2a71-492a-9fe0-68c471a9022b",
-              "name": "Get itinerary M\u00e9tro Villiers - A\u00e9roport Orly",
+              "name": "Order - Get itinerary M\u00e9tro Villiers - A\u00e9roport Orly",
               "event": [
                 {
                   "listen": "test",
