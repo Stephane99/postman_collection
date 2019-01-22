@@ -5115,50 +5115,7 @@
                 "id": "dca0b662-8084-4c4f-9048-066bb1c0b590",
                 "type": "text/javascript",
                 "exec": [
-                  "postman.setGlobalVariable(\"itineraryUtils\", function loadItineraryUtils() {",
-                  "    return {",
-                  "",
-                  "        assertItineraries: function(expectations) {",
-                  "",
-                  "            utils.checkResponseCode(200);",
-                  "",
-                  "            const busDirectProposals = _.chain(json.results)",
-                  "                .map(({segments}) => segments)",
-                  "                .flatten()",
-                  "                .map(({proposals}) => proposals)",
-                  "                .flatten()",
-                  "                .filter(r => r)",
-                  "                .filter(({partner}) => partner === 'BUS_DIRECT')",
-                  "                .value();",
-                  "            ",
-                  "            pm.test('Has at least one BUS DIRECT result', function () {",
-                  "                pm.expect(busDirectProposals).to.have.lengthOf.at.least(1);",
-                  "            });",
-                  "",
-                  "            const busDirectProposal = busDirectProposals[0];",
-                  "",
-                  "            pm.test('Check Segment BUS_DIRECT label', function () {",
-                  "                const label = busDirectProposal.label;",
-                  "                pm.expect(label).to.not.be.null;",
-                  "                pm.expect(label).to.equal(expectations.label);",
-                  "                //pm.expect(label).to.equal(\"LE BUS DIRECT 1 : A\u00c9ROPORT ORLY <=> PARIS \u00c9TOILE / CHAMPS-\u00c9LYS\u00c9ES\");",
-                  "            });",
-                  "        ",
-                  "            pm.test('Check Segment BUS_DIRECT proposal.id', function () {",
-                  "                const proposalId = busDirectProposal.id;",
-                  "                pm.expect(proposalId).to.not.be.null;",
-                  "                pm.expect(proposalId).to.match(/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/);",
-                  "            });",
-                  "        ",
-                  "            pm.test('Check Segment BUS_DIRECT proposal.price', function () {",
-                  "                const proposalPrice = busDirectProposal.price;",
-                  "                pm.expect(proposalPrice).to.not.be.null;",
-                  "                pm.expect(proposalPrice).to.deep.equal({amount: expectations.amount, type: 'FIXED', currency: 'EUR'});",
-                  "                //pm.expect(proposalPrice).to.deep.equal({amount: 6, type: 'FIXED', currency: 'EUR'});",
-                  "            });",
-                  "        }",
-                  "    };",
-                  "} + '; loadItineraryUtils();');"
+                  ""
                 ]
               }
             },
@@ -5210,6 +5167,56 @@
           "name": "Bus Direct",
           "description": "",
           "item": [
+            {
+              "_postman_id": "c94b19a3-fa3a-49bb-a19f-38206520edf2",
+              "name": "Post new Customer",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "id": "75f8a2ed-9f6a-46b4-91bb-d9f36ea7d45f",
+                    "exec": [
+                      "const utils = eval(globals.loadUtils);",
+                      "",
+                      "utils.getToken(\"customers\", pm.environment.get(\"clientId_appSncf\"), pm.environment.get(\"secret_appSncf\"));",
+                      "",
+                      "const uniqueId = utils.getUniqueIdBasedOnDate();",
+                      "pm.variables.set('uniqueId', uniqueId)",
+                      "pm.environment.set('external_id', uniqueId);"
+                    ],
+                    "type": "text/javascript"
+                  }
+                },
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "4adb4a83-5ae7-4307-986e-f9bbfb105a60",
+                    "exec": [
+                      "const json = pm.response.json();",
+                      "",
+                      "const utils = eval(globals.loadUtils);",
+                      "utils.checkResponseCodeAndStatus(201, \"SUCCESS\");"
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n\t\"email\": \"fcabrel@oui.sncf{{uniqueId}}\",\n\t\"firstName\": \"Francis{{uniqueId}}\",\n\t\"lastName\": \"CABREL{{uniqueId}}\",\n\t\"phoneNumber\": \"0687654321{{uniqueId}}\",\n\t\"externalId\": \"{{external_id}}\"\n}"
+                },
+                "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/customers"
+              },
+              "response": []
+            },
             {
               "_postman_id": "a41a7caf-c6fb-44c8-a17e-0b31500122fc",
               "name": "Post Itinerary M\u00e9tro Villiers - A\u00e9roport Orly",
@@ -5504,56 +5511,6 @@
                 "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/orders"
               },
               "response": []
-            },
-            {
-              "_postman_id": "c94b19a3-fa3a-49bb-a19f-38206520edf2",
-              "name": "Post new Customer",
-              "event": [
-                {
-                  "listen": "prerequest",
-                  "script": {
-                    "id": "75f8a2ed-9f6a-46b4-91bb-d9f36ea7d45f",
-                    "exec": [
-                      "const utils = eval(globals.loadUtils);",
-                      "",
-                      "utils.getToken(\"customers\", pm.environment.get(\"clientId_appSncf\"), pm.environment.get(\"secret_appSncf\"));",
-                      "",
-                      "const uniqueId = utils.getUniqueIdBasedOnDate();",
-                      "pm.variables.set('uniqueId', uniqueId)",
-                      "pm.environment.set('external_id', uniqueId);"
-                    ],
-                    "type": "text/javascript"
-                  }
-                },
-                {
-                  "listen": "test",
-                  "script": {
-                    "id": "4adb4a83-5ae7-4307-986e-f9bbfb105a60",
-                    "exec": [
-                      "const json = pm.response.json();",
-                      "",
-                      "const utils = eval(globals.loadUtils);",
-                      "utils.checkResponseCodeAndStatus(201, \"SUCCESS\");"
-                    ],
-                    "type": "text/javascript"
-                  }
-                }
-              ],
-              "request": {
-                "method": "POST",
-                "header": [
-                  {
-                    "key": "Content-Type",
-                    "value": "application/json"
-                  }
-                ],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n\t\"email\": \"fcabrel@oui.sncf{{uniqueId}}\",\n\t\"firstName\": \"Francis{{uniqueId}}\",\n\t\"lastName\": \"CABREL{{uniqueId}}\",\n\t\"phoneNumber\": \"0687654321{{uniqueId}}\",\n\t\"externalId\": \"{{external_id}}\"\n}"
-                },
-                "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/customers"
-              },
-              "response": []
             }
           ],
           "_postman_isSubFolder": true
@@ -5747,8 +5704,7 @@
           " * ",
           " * const utils = globals.loadUtils;",
           " * const distance = utils.distance(...);",
-          " */",
-          ""
+          " */"
         ]
       }
     },
