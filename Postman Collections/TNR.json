@@ -5226,8 +5226,7 @@
                       "utils.getToken(\"customers\", pm.environment.get(\"clientId\"), pm.environment.get(\"secret\"));",
                       "",
                       "const uniqueId = utils.getUniqueIdBasedOnDate();",
-                      "pm.variables.set('uniqueId', uniqueId)",
-                      "pm.environment.set('external_id', uniqueId);"
+                      "pm.environment.set('customerId', uniqueId);"
                     ],
                     "type": "text/javascript"
                   }
