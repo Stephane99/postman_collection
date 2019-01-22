@@ -5557,9 +5557,31 @@
                     "id": "cf9587e9-5dd3-425a-87a6-ac1f44ed4298",
                     "exec": [
                       "const utils = eval(globals.loadUtils);",
-                      "utils.getToken(\"orders\", pm.environment.get(\"clientId\"), pm.environment.get(\"secret\"));",
+                      "utils.getToken(\"orders\", pm.environment.get(\"clientId\"), pm.environment.get(\"secret\"));"
+                    ],
+                    "type": "text/javascript"
+                  }
+                },
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "86fae201-1777-4c49-b2c0-1a2954ea1904",
+                    "exec": [
+                      "const json = pm.response.json();",
                       "",
-                      "console.log(json);"
+                      "const utils = eval(globals.loadUtils);",
+                      "utils.checkResponseCode(201);",
+                      "",
+                      "pm.test(\"Order id in response\", function () {",
+                      "    const orderId = json.orderId;",
+                      "    pm.expect(orderId).to.match(/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/);",
+                      "});",
+                      "",
+                      "pm.test(\"Billet in response\", function () {",
+                      "    const ebillet = json.transactions[0].partnerSpecificAttributes.ebillet;",
+                      "    console.log(json);",
+                      "});",
+                      ""
                     ],
                     "type": "text/javascript"
                   }
