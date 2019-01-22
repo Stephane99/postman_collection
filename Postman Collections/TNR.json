@@ -5550,6 +5550,20 @@
             {
               "_postman_id": "ff17039d-109c-4156-8a36-224c349ea014",
               "name": "Post Order",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "id": "cf9587e9-5dd3-425a-87a6-ac1f44ed4298",
+                    "exec": [
+                      "utils.getToken(\"orders\", pm.environment.get(\"clientId\"), pm.environment.get(\"secret\"));",
+                      "",
+                      ""
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
               "request": {
                 "method": "POST",
                 "header": [
