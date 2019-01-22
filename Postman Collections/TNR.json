@@ -5491,7 +5491,6 @@
                       "    utils.alertWhenResponseCodeNotEqualTo(200);",
                       "",
                       "    utils.sleep(1000); // wait 1 seconde",
-                      "    console.log('ejdjkdnejej');",
                       "    postman.setNextRequest('Order - Get itinerary M\u00e9tro Villiers - A\u00e9roport Orly');",
                       "",
                       "} else if (json.status === 'COMPLETE') {",
