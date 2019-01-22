@@ -5211,20 +5211,6 @@
           "description": "",
           "item": [
             {
-              "_postman_id": "c5c101fa-6de4-4569-92cd-276a65e54a33",
-              "name": "Post search",
-              "request": {
-                "method": "GET",
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": ""
-                },
-                "url": ""
-              },
-              "response": []
-            },
-            {
               "_postman_id": "a41a7caf-c6fb-44c8-a17e-0b31500122fc",
               "name": "Post Itinerary M\u00e9tro Villiers - A\u00e9roport Orly",
               "event": [
