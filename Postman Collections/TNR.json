@@ -103,7 +103,7 @@
                         "id": "ef7c7261-e511-4fc1-acf0-f2f3cd845d1b",
                         "exec": [
                           "const json = pm.response.json();",
-                          "const utils = eval(globals.loadUtils);",
+                          "",
                           "utils.getToken(\"customers\", pm.environment.get(\"clientId_appSncf\"), pm.environment.get(\"secret_appSncf\"));",
                           "",
                           "const utils = eval(globals.loadUtils);",
