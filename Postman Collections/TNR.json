@@ -104,9 +104,10 @@
                         "exec": [
                           "const json = pm.response.json();",
                           "",
+                          "const utils = eval(globals.loadUtils);",
+                          "",
                           "utils.getToken(\"customers\", pm.environment.get(\"clientId_appSncf\"), pm.environment.get(\"secret_appSncf\"));",
                           "",
-                          "const utils = eval(globals.loadUtils);",
                           "utils.checkResponseCodeAndStatus(201, \"SUCCESS\");",
                           ""
                         ],
@@ -139,7 +140,6 @@
                       "script": {
                         "id": "75f8a2ed-9f6a-46b4-91bb-d9f36ea7d45f",
                         "exec": [
-                          "console.log('3')",
                           "const utils = eval(globals.loadUtils);",
                           "",
                           "const uniqueId = utils.getUniqueIdBasedOnDate(); // unique id on 12 digits",
