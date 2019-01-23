@@ -31,6 +31,7 @@
                         "exec": [
                           "console.log('zbrah')",
                           "const utils = eval(globals.loadUtils);",
+                          "console.log('zbruh')",
                           "",
                           "utils.getToken(\"customers\", pm.environment.get(\"clientId_appSncf\"), pm.environment.get(\"secret_appSncf\"));",
                           "",
