@@ -5316,7 +5316,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"origin\": {\n    \"latitude\": 48.881365,\n    \"longitude\": 2.315047\n  },\n  \"destination\": {\n    \"latitude\": 48.732702,\n    \"longitude\": 2.364299\n  },\n  \"searchDate\": \"{{itinerary_search_date}}\"\n}\n"
+                  "raw": "{\n  \"origin\": {\n    \"latitude\": 48.881365,\n    \"longitude\": 2.315047\n  },\n  \"destination\": {\n    \"latitude\": 48.732702,\n    \"longitude\": 2.364299\n  },\n  \"searchDate\": \"{{itinerary_search_date}}\",\n  \"passengers\": [\n            {\n                \"birthDate\": \"2001-01-23\",\n                \"id\": \"toto\"\n            }\n        ]\n}\n"
                 },
                 "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/search/itinerary"
               },
