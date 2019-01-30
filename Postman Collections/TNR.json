@@ -3705,7 +3705,7 @@
                               "    utils.alertWhenResponseCodeNotEqualTo(200);",
                               "",
                               "    utils.sleep(1000); // wait 1 seconde",
-                              "    postman.setNextRequest('get aroundme');",
+                              "    postman.setNextRequest('get aroundme Smovengo');",
                               "",
                               "} else if (json.status === 'COMPLETE') {",
                               "",
@@ -3737,8 +3737,8 @@
                         "header": [
                           {
                             "key": "Content-Type",
-                            "value": "application/xml",
-                            "type": "text"
+                            "type": "text",
+                            "value": "application/xml"
                           }
                         ],
                         "body": {
