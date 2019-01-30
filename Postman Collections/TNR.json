@@ -5966,7 +5966,13 @@
                     "id": "cf9587e9-5dd3-425a-87a6-ac1f44ed4298",
                     "exec": [
                       "const utils = eval(globals.loadUtils);",
-                      "utils.getToken(\"orders\", pm.environment.get(\"clientId\"), pm.environment.get(\"secret\"));"
+                      "utils.getToken(\"orders\", pm.environment.get(\"clientId\"), pm.environment.get(\"secret\"));",
+                      "",
+                      "console.log(\"\");",
+                      "console.log(pm.environment.get(customerId));",
+                      "console.log(pm.environment.get(searchId));",
+                      "console.log(pm.environment.get(proposalId));",
+                      ""
                     ],
                     "type": "text/javascript"
                   }
