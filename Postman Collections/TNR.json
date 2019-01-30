@@ -4357,77 +4357,6 @@
                       ]
                     },
                     {
-                      "_postman_id": "f4349a02-a9c8-4f41-a669-830cd1995579",
-                      "name": "Get itinerary M\u00e9tro Villiers - A\u00e9roport Orly",
-                      "event": [
-                        {
-                          "listen": "test",
-                          "script": {
-                            "id": "0c298ebc-95ca-4ce5-9c9e-9da35ce65e31",
-                            "exec": [
-                              "const retryCount = pm.environment.get('get_search_retry_count');",
-                              "pm.environment.set('get_search_retry_count', retryCount + 1);",
-                              "",
-                              "const json = pm.response.json();",
-                              "",
-                              "const utils = eval(globals.loadUtils);",
-                              "const itineraryUtils = eval(globals.itineraryUtils);",
-                              "",
-                              "",
-                              "if (json.status === 'IN_PROGRESS' && retryCount < 50) {",
-                              "    console.log(\"IN_PROGRESS\");",
-                              "",
-                              "    utils.alertWhenResponseCodeNotEqualTo(200);",
-                              "",
-                              "    utils.sleep(1000); // wait 1 seconde",
-                              "    postman.setNextRequest('Get itinerary M\u00e9tro Villiers - A\u00e9roport Orly');",
-                              "",
-                              "} else if (json.status === 'COMPLETE') {",
-                              "    console.log(\"COMPLETE\");",
-                              "",
-                              "    itineraryUtils.assertItineraries({",
-                              "        label: \"LE BUS DIRECT 1 : A\u00c9ROPORT ORLY <=> PARIS \u00c9TOILE / CHAMPS-\u00c9LYS\u00c9ES\",",
-                              "        amount: 600",
-                              "    });",
-                              "",
-                              "}",
-                              "else{",
-                              "    tests['ERROR : Last response has a status \"NOT COMPLETE\"'] = false;",
-                              "}",
-                              ""
-                            ],
-                            "type": "text/javascript"
-                          }
-                        },
-                        {
-                          "listen": "prerequest",
-                          "script": {
-                            "id": "0a4d398d-5a31-46a9-9a86-afd121d8b683",
-                            "exec": [
-                              ""
-                            ],
-                            "type": "text/javascript"
-                          }
-                        }
-                      ],
-                      "request": {
-                        "method": "GET",
-                        "header": [
-                          {
-                            "key": "Content-Type",
-                            "type": "text",
-                            "value": "application/xml"
-                          }
-                        ],
-                        "body": {
-                          "mode": "raw",
-                          "raw": ""
-                        },
-                        "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/search/itinerary/{{searchId}}"
-                      },
-                      "response": []
-                    },
-                    {
                       "_postman_id": "d8e13492-0048-4dff-8444-b1d89de98c3d",
                       "name": "Post Itinerary M\u00e9tro Villiers - A\u00e9roport Orly Copy",
                       "event": [
@@ -4631,6 +4560,77 @@
                           "body": "{\n    \"searchId\": \"a7777f75-6464-4528-b798-b7cc743fdeca\"\n}"
                         }
                       ]
+                    },
+                    {
+                      "_postman_id": "f4349a02-a9c8-4f41-a669-830cd1995579",
+                      "name": "Get itinerary M\u00e9tro Villiers - A\u00e9roport Orly",
+                      "event": [
+                        {
+                          "listen": "test",
+                          "script": {
+                            "id": "0c298ebc-95ca-4ce5-9c9e-9da35ce65e31",
+                            "exec": [
+                              "const retryCount = pm.environment.get('get_search_retry_count');",
+                              "pm.environment.set('get_search_retry_count', retryCount + 1);",
+                              "",
+                              "const json = pm.response.json();",
+                              "",
+                              "const utils = eval(globals.loadUtils);",
+                              "const itineraryUtils = eval(globals.itineraryUtils);",
+                              "",
+                              "",
+                              "if (json.status === 'IN_PROGRESS' && retryCount < 50) {",
+                              "    console.log(\"IN_PROGRESS\");",
+                              "",
+                              "    utils.alertWhenResponseCodeNotEqualTo(200);",
+                              "",
+                              "    utils.sleep(1000); // wait 1 seconde",
+                              "    postman.setNextRequest('Get itinerary M\u00e9tro Villiers - A\u00e9roport Orly');",
+                              "",
+                              "} else if (json.status === 'COMPLETE') {",
+                              "    console.log(\"COMPLETE\");",
+                              "",
+                              "    itineraryUtils.assertItineraries({",
+                              "        label: \"LE BUS DIRECT 1 : A\u00c9ROPORT ORLY <=> PARIS \u00c9TOILE / CHAMPS-\u00c9LYS\u00c9ES\",",
+                              "        amount: 600",
+                              "    });",
+                              "",
+                              "}",
+                              "else{",
+                              "    tests['ERROR : Last response has a status \"NOT COMPLETE\"'] = false;",
+                              "}",
+                              ""
+                            ],
+                            "type": "text/javascript"
+                          }
+                        },
+                        {
+                          "listen": "prerequest",
+                          "script": {
+                            "id": "0a4d398d-5a31-46a9-9a86-afd121d8b683",
+                            "exec": [
+                              ""
+                            ],
+                            "type": "text/javascript"
+                          }
+                        }
+                      ],
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "type": "text",
+                            "value": "application/xml"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": ""
+                        },
+                        "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/search/itinerary/{{searchId}}"
+                      },
+                      "response": []
                     }
                   ],
                   "event": [
