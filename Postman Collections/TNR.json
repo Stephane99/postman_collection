@@ -5123,7 +5123,7 @@
                   "item": [
                     {
                       "_postman_id": "d8e13492-0048-4dff-8444-b1d89de98c3d",
-                      "name": "Post Itinerary La D\u00e9fense - Gare de Lyon",
+                      "name": "Post Itinerary Karhoo La D\u00e9fense - Gare de Lyon",
                       "event": [
                         {
                           "listen": "prerequest",
@@ -5328,7 +5328,7 @@
                     },
                     {
                       "_postman_id": "82bbc5f5-9ec6-47f8-b880-2c05de8ba9f1",
-                      "name": "Get itinerary La D\u00e9fense - Gare de Lyon",
+                      "name": "Get itinerary Karhoo La D\u00e9fense - Gare de Lyon",
                       "event": [
                         {
                           "listen": "test",
@@ -5350,16 +5350,16 @@
                               "    utils.alertWhenResponseCodeNotEqualTo(200);",
                               "",
                               "    utils.sleep(1000); // wait 1 seconde",
-                              "    postman.setNextRequest('Get itinerary M\u00e9tro Villiers - A\u00e9roport Orly');",
+                              "    postman.setNextRequest('Get itinerary Karhoo La D\u00e9fense - Gare de Lyon');",
                               "",
                               "} else if (json.status === 'COMPLETE') {",
                               "    console.log(\"COMPLETE\");",
-                              "",
+                              "/*",
                               "    itineraryUtils.assertItineraries({",
                               "        label: \"LE BUS DIRECT 1 : A\u00c9ROPORT ORLY <=> PARIS \u00c9TOILE / CHAMPS-\u00c9LYS\u00c9ES\",",
                               "        amount: 600",
                               "    });",
-                              "",
+                              "*/",
                               "}",
                               "else{",
                               "    tests['ERROR : Last response has a status \"NOT COMPLETE\"'] = false;",
