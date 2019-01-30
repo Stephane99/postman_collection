@@ -5168,7 +5168,7 @@
                         ],
                         "body": {
                           "mode": "raw",
-                          "raw": "{\n  \"origin\": {\n    \"latitude\": 48.89143,\n    \"longitude\": 2.239610\n  },\n  \"destination\": {\n    \"latitude\": 48.844982,\n    \"longitude\": 2.373084\n  },\n  \"searchDate\": \"{{itinerary_search_date}}\"\n}\n"
+                          "raw": "{\n  \"origin\": {\n    \"latitude\": 48.89143,\n    \"longitude\": 2.239610\n  },\n  \"destination\": {\n    \"latitude\": 48.844982,\n    \"longitude\": 2.373084\n  },\n  \"searchDate\": \"{{itinerary_search_date}}\"\n}"
                         },
                         "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/search/itinerary"
                       },
@@ -5365,11 +5365,6 @@
                               "",
                               "    pm.test('Check KARHOO proposals schemas', function () {",
                               "        itineraryUtils.checkProposalSchemas(karhooProposals, proposalSchema);",
-                              "    });",
-                              "",
-                              "    pm.test('Check KARHOO label == mpv', function () {",
-                              "        pm.expect(karhooProposal.label).to.not.be.null;",
-                              "        pm.expect(karhooProposal.label).to.equal('mpv');",
                               "    });",
                               "",
                               "    pm.test('Check Segment KARHOO proposal.price', function () {",
