@@ -3471,7 +3471,7 @@
                   "item": [
                     {
                       "_postman_id": "044b5702-8346-49f5-87e7-d2615bf411ce",
-                      "name": "post aroundme",
+                      "name": "post aroundme Smovengo",
                       "event": [
                         {
                           "listen": "prerequest",
@@ -3674,7 +3674,7 @@
                     },
                     {
                       "_postman_id": "77497ff5-a9e8-474e-84a3-99ad73e192d7",
-                      "name": "get aroundme",
+                      "name": "get aroundme Smovengo",
                       "event": [
                         {
                           "listen": "test",
