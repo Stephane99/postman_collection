@@ -3499,9 +3499,7 @@
                               "    pm.response.to.have.jsonBody('searchId');",
                               "    pm.environment.set('searchId', json.searchId);",
                               "    pm.environment.set('get_search_retry_count', 0);",
-                              "    postman.setNextRequest('get aroundme');",
-                              "});",
-                              ""
+                              "});"
                             ],
                             "type": "text/javascript"
                           }
