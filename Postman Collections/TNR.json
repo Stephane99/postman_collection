@@ -3795,7 +3795,6 @@
                               "    pm.response.to.have.jsonBody('searchId');",
                               "    pm.environment.set('searchId', json.searchId);",
                               "    pm.environment.set('get_search_retry_count', 0);",
-                              "    postman.setNextRequest('get aroundme Smovengo 10m');",
                               "});",
                               ""
                             ],
@@ -3984,7 +3983,7 @@
                     },
                     {
                       "_postman_id": "522380c9-dfec-465e-ac64-b9a73a2902e9",
-                      "name": "get aroundme Smovengo10m",
+                      "name": "get aroundme Smovengo 10m",
                       "event": [
                         {
                           "listen": "test",
