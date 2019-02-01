@@ -6113,7 +6113,7 @@
                   "",
                   "const uniqueId = utils.getUniqueIdBasedOnDate();",
                   "pm.variables.set('uniqueId', uniqueId)",
-                  "pm.environment.set('external_id', uniqueId);"
+                  "pm.environment.set('externalId', uniqueId);"
                 ],
                 "type": "text/javascript"
               }
@@ -6125,15 +6125,14 @@
                 "exec": [
                   "const json = pm.response.json();",
                   "",
-                  "const utils = eval(globals.loadUtils);",
-                  "utils.checkResponseCodeAndStatus(201, \"SUCCESS\");"
+                  "const utils = eval(globals.loadUtils);"
                 ],
                 "type": "text/javascript"
               }
             }
           ],
           "request": {
-            "method": "POST",
+            "method": "GET",
             "header": [
               {
                 "key": "Content-Type",
@@ -6144,7 +6143,29 @@
               "mode": "raw",
               "raw": "{\n\t\"email\": \"fcabrel@oui.sncf{{uniqueId}}\",\n\t\"firstName\": \"Francis{{uniqueId}}\",\n\t\"lastName\": \"CABREL{{uniqueId}}\",\n\t\"phoneNumber\": \"0687654321{{uniqueId}}\",\n\t\"externalId\": \"{{external_id}}\"\n}"
             },
-            "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/customers"
+            "url": {
+              "raw": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/customercare/customers?firstName=Vincent{{external_id}}",
+              "protocol": "https",
+              "host": [
+                "api",
+                "maas-{{account}}",
+                "aws",
+                "vsct",
+                "fr"
+              ],
+              "path": [
+                "{{envName}}",
+                "customercare",
+                "customers"
+              ],
+              "query": [
+                {
+                  "key": "firstName",
+                  "value": "Vincent{{external_id}}",
+                  "equals": true
+                }
+              ]
+            }
           },
           "response": []
         }
