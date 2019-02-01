@@ -6059,11 +6059,11 @@
                 "exec": [
                   "const utils = eval(globals.loadUtils);",
                   "",
-                  "utils.getToken(\"customers\", pm.environment.get(\"clientId_appSncf\"), pm.environment.get(\"secret_appSncf\"));",
+                  "utils.getToken(\"customers\", pm.environment.get(\"clientId\"), pm.environment.get(\"secret\"));",
                   "",
                   "const uniqueId = utils.getUniqueIdBasedOnDate();",
                   "pm.variables.set('uniqueId', uniqueId)",
-                  "pm.environment.set('external_id', uniqueId);"
+                  "pm.environment.set('externalId', uniqueId);"
                 ],
                 "type": "text/javascript"
               }
@@ -6092,7 +6092,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n\t\"email\": \"fcabrel@oui.sncf{{uniqueId}}\",\n\t\"firstName\": \"Francis{{uniqueId}}\",\n\t\"lastName\": \"CABREL{{uniqueId}}\",\n\t\"phoneNumber\": \"0687654321{{uniqueId}}\",\n\t\"externalId\": \"{{external_id}}\"\n}"
+              "raw": "{\n\t\"email\": \"vcasssel{{uniqueId}}@oui.sncf\",\n\t\"firstName\": \"Vincent{{uniqueId}}\",\n\t\"lastName\": \"Cassel{{uniqueId}}\",\n\t\"phoneNumber\": \"0687654321{{uniqueId}}\",\n\t\"externalId\": \"{{external_id}}\"\n}"
             },
             "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/customers"
           },
@@ -6100,7 +6100,7 @@
         },
         {
           "_postman_id": "0d78af55-a9d0-4753-bd97-a1e8d781a434",
-          "name": "Customer care - Post new Customer Copy",
+          "name": "Customer care - Search customers",
           "event": [
             {
               "listen": "prerequest",
