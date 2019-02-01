@@ -6002,6 +6002,7 @@
                       "",
                       "const utils = eval(globals.loadUtils);",
                       "utils.checkResponseCode(201);",
+                      "tests[\"ORDER en cours de refonte\"] = false;",
                       "",
                       "pm.test(\"Order id in response\", function () {",
                       "    const orderId = json.orderId;",
