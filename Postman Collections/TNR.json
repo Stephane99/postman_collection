@@ -6002,22 +6002,21 @@
                       "",
                       "const utils = eval(globals.loadUtils);",
                       "utils.checkResponseCode(201);",
-                      "tests[\"ORDER en cours de refonte\"] = false;",
+                      "pm.test.skip(\"ORDER en cours de refonte\");",
                       "",
                       "pm.test(\"Order id in response\", function () {",
                       "    const orderId = json.orderId;",
                       "    pm.expect(orderId).to.match(/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/);",
                       "});",
                       "",
-                      "tests[\"ORDER en cours de refonte\"] = false;",
+                      "pm.test.skip(\"ORDER en cours de refonte\");",
                       "",
                       "pm.test(\"Billet in response\", function () {",
                       "    const ebillet = json.transactions[0].partnerSpecificAttributes.ebillet;",
                       "    pm.expect(ebillet).to.match(/^[0-9]{38}$/);",
                       "});",
                       "",
-                      "tests[\"ORDER en cours de refonte\"] = false;",
-                      ""
+                      "pm.test.skip(\"ORDER en cours de refonte\");"
                     ],
                     "type": "text/javascript"
                   }
@@ -6041,6 +6040,63 @@
             }
           ],
           "_postman_isSubFolder": true
+        }
+      ]
+    },
+    {
+      "_postman_id": "73a64993-1507-4148-824b-e498a63ac024",
+      "name": "Customer care",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "35fcadbb-e759-48ef-96b9-839d0453ad91",
+          "name": "Customer care - Post new Customer",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "75f8a2ed-9f6a-46b4-91bb-d9f36ea7d45f",
+                "exec": [
+                  "const utils = eval(globals.loadUtils);",
+                  "",
+                  "utils.getToken(\"customers\", pm.environment.get(\"clientId_appSncf\"), pm.environment.get(\"secret_appSncf\"));",
+                  "",
+                  "const uniqueId = utils.getUniqueIdBasedOnDate();",
+                  "pm.variables.set('uniqueId', uniqueId)",
+                  "pm.environment.set('external_id', uniqueId);"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "4adb4a83-5ae7-4307-986e-f9bbfb105a60",
+                "exec": [
+                  "const json = pm.response.json();",
+                  "",
+                  "const utils = eval(globals.loadUtils);",
+                  "utils.checkResponseCodeAndStatus(201, \"SUCCESS\");"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"email\": \"fcabrel@oui.sncf{{uniqueId}}\",\n\t\"firstName\": \"Francis{{uniqueId}}\",\n\t\"lastName\": \"CABREL{{uniqueId}}\",\n\t\"phoneNumber\": \"0687654321{{uniqueId}}\",\n\t\"externalId\": \"{{external_id}}\"\n}"
+            },
+            "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/customers"
+          },
+          "response": []
         }
       ]
     }
