@@ -6008,10 +6008,14 @@
                       "    pm.expect(orderId).to.match(/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/);",
                       "});",
                       "",
+                      "tests[\"ORDER en cours de refonte\"] = false;",
+                      "",
                       "pm.test(\"Billet in response\", function () {",
                       "    const ebillet = json.transactions[0].partnerSpecificAttributes.ebillet;",
                       "    pm.expect(ebillet).to.match(/^[0-9]{38}$/);",
                       "});",
+                      "",
+                      "tests[\"ORDER en cours de refonte\"] = false;",
                       ""
                     ],
                     "type": "text/javascript"
