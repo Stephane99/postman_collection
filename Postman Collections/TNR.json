@@ -4355,7 +4355,7 @@
                     },
                     {
                       "_postman_id": "f4349a02-a9c8-4f41-a669-830cd1995579",
-                      "name": "Get itinerary M\u00e9tro Villiers - A\u00e9roport Orly",
+                      "name": "Get itinerary  Bus Direct - M\u00e9tro Villiers - A\u00e9roport Orly",
                       "event": [
                         {
                           "listen": "test",
@@ -4456,7 +4456,7 @@
                   "item": [
                     {
                       "_postman_id": "a2c2965d-c8a9-4e29-93a0-f59f3c85211e",
-                      "name": "Post Itinerary M\u00e9tro Villiers - A\u00e9roport CDG",
+                      "name": "Post Itinerary Bus Direct - M\u00e9tro Villiers - A\u00e9roport CDG",
                       "event": [
                         {
                           "listen": "prerequest",
@@ -4668,7 +4668,7 @@
                     },
                     {
                       "_postman_id": "813b732e-4aa5-4042-b3de-3bcf5f320585",
-                      "name": "Get itinerary M\u00e9tro Villiers - A\u00e9roport CDG",
+                      "name": "Get itinerary Bus Direct - M\u00e9tro Villiers - A\u00e9roport CDG",
                       "event": [
                         {
                           "listen": "test",
