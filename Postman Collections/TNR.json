@@ -4377,7 +4377,7 @@
                               "    utils.alertWhenResponseCodeNotEqualTo(200);",
                               "",
                               "    utils.sleep(1000); // wait 1 seconde",
-                              "    postman.setNextRequest('Get itinerary M\u00e9tro Villiers - A\u00e9roport Orly');",
+                              "    postman.setNextRequest('Get itinerary  Bus Direct - M\u00e9tro Villiers - A\u00e9roport Orly');",
                               "",
                               "} else if (json.status === 'COMPLETE') {",
                               "    console.log(\"COMPLETE\");",
@@ -4805,7 +4805,7 @@
                   "item": [
                     {
                       "_postman_id": "c9b45040-1e27-49fa-98fc-7f2d8c56310e",
-                      "name": "Post Itinerary M\u00e9tro Villiers > Marseilles Saint-Charles",
+                      "name": "Post Itinerary Bus Direct - M\u00e9tro Villiers > Marseilles Saint-Charles",
                       "event": [
                         {
                           "listen": "prerequest",
@@ -5011,7 +5011,7 @@
                     },
                     {
                       "_postman_id": "aae19502-1f5e-44c2-8460-2fbcf04e7953",
-                      "name": "Get Itinerary M\u00e9tro Villiers > Marseilles Saint-Charles",
+                      "name": "Get Itinerary Bus Direct - M\u00e9tro Villiers > Marseilles Saint-Charles",
                       "event": [
                         {
                           "listen": "test",
