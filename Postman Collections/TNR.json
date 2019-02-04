@@ -4150,7 +4150,7 @@
                   "item": [
                     {
                       "_postman_id": "58f00dd3-2275-4983-8294-c07a1c30b5e7",
-                      "name": "Post Itinerary M\u00e9tro Villiers - A\u00e9roport Orly",
+                      "name": "Post Itinerary Bus Direct - M\u00e9tro Villiers - A\u00e9roport Orly",
                       "event": [
                         {
                           "listen": "prerequest",
@@ -6062,7 +6062,7 @@
                   "utils.getToken(\"customers\", pm.environment.get(\"clientId\"), pm.environment.get(\"secret\"));",
                   "",
                   "const uniqueId = utils.getUniqueIdBasedOnDate();",
-                  "pm.variables.set('uniqueId', uniqueId)",
+                  "pm.variables.set('uniqueId', uniqueId);",
                   "pm.environment.set('externalId', uniqueId);"
                 ],
                 "type": "text/javascript"
@@ -6092,7 +6092,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n\t\"email\": \"vcasssel{{uniqueId}}@oui.sncf\",\n\t\"firstName\": \"Vincent\",\n\t\"lastName\": \"Cassel{{uniqueId}}\",\n\t\"phoneNumber\": \"0687654321{{uniqueId}}\",\n\t\"externalId\": \"{{externalId}}\"\n}"
+              "raw": "{\n\t\"email\": \"vcasssel{{uniqueId}}@oui.sncf\",\n\t\"firstName\": \"Vincent{{uniqueId}}\",\n\t\"lastName\": \"Cassel{{uniqueId}}\",\n\t\"phoneNumber\": \"0687654321{{uniqueId}}\",\n\t\"externalId\": \"{{externalId}}\"\n}"
             },
             "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/customers"
           },
