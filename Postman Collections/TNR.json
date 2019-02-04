@@ -4732,7 +4732,7 @@
                               "    });",
                               "*/",
                               "",
-                              "        //label : \"LE BUS DIRECT 2 : A\u00c9ROPORT CDG <=> PARIS TOUR EIFFEL\",",
+                              "    //label : \"LE BUS DIRECT 2 : A\u00c9ROPORT CDG <=> PARIS TOUR EIFFEL\",",
                               "    itineraryUtils.assertItineraries({",
                               "        label : \"LE BUS DIRECT \",",
                               "        amount : 900",
