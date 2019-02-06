@@ -5905,89 +5905,89 @@
                       "body": "{\n    \"searchId\": \"a7777f75-6464-4528-b798-b7cc743fdeca\"\n}"
                     }
                   ]
-                },
-                {
-                  "_postman_id": "a6f90dea-2a71-492a-9fe0-68c471a9022b",
-                  "name": "Order - Get itinerary M\u00e9tro Villiers - A\u00e9roport Orly",
-                  "event": [
-                    {
-                      "listen": "test",
-                      "script": {
-                        "id": "0c298ebc-95ca-4ce5-9c9e-9da35ce65e31",
-                        "exec": [
-                          "const retryCount = pm.environment.get('get_search_retry_count');",
-                          "pm.environment.set('get_search_retry_count', retryCount + 1);",
-                          "",
-                          "const json = pm.response.json();",
-                          "",
-                          "const utils = eval(globals.loadUtils);",
-                          "const itineraryUtils = eval(globals.itineraryUtils);",
-                          "",
-                          "",
-                          "if (json.status === 'IN_PROGRESS' && retryCount < 50) {",
-                          "    console.log(\"IN_PROGRESS\");",
-                          "",
-                          "    utils.alertWhenResponseCodeNotEqualTo(200);",
-                          "",
-                          "    utils.sleep(1000); // wait 1 seconde",
-                          "    postman.setNextRequest('Order - Get itinerary M\u00e9tro Villiers - A\u00e9roport Orly');",
-                          "",
-                          "} else if (json.status === 'COMPLETE') {",
-                          "    console.log(\"COMPLETE\");",
-                          "",
-                          "    const busDirectProposals = _.chain(json.results)",
-                          "        .map(({segments}) => segments)",
-                          "        .flatten()",
-                          "        .map(({proposals}) => proposals)",
-                          "        .flatten()",
-                          "        .filter(r => r)",
-                          "        .filter(({partner}) => partner === 'BUS_DIRECT')",
-                          "        .value();",
-                          "    ",
-                          "    if (busDirectProposals.length === 0) {",
-                          "        tests['ERROR : No bus direct proposal'] = false;",
-                          "    } else {",
-                          "        pm.environment.set('proposalId', busDirectProposals[0].id);",
-                          "    }",
-                          "}",
-                          "else{",
-                          "    tests['ERROR : Last response has a status \"NOT COMPLETE\"'] = false;",
-                          "}",
-                          ""
-                        ],
-                        "type": "text/javascript"
-                      }
-                    },
-                    {
-                      "listen": "prerequest",
-                      "script": {
-                        "id": "0a4d398d-5a31-46a9-9a86-afd121d8b683",
-                        "exec": [
-                          ""
-                        ],
-                        "type": "text/javascript"
-                      }
-                    }
-                  ],
-                  "request": {
-                    "method": "GET",
-                    "header": [
-                      {
-                        "key": "Content-Type",
-                        "type": "text",
-                        "value": "application/xml"
-                      }
-                    ],
-                    "body": {
-                      "mode": "raw",
-                      "raw": ""
-                    },
-                    "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/search/itinerary/{{searchId}}"
-                  },
-                  "response": []
                 }
               ],
               "_postman_isSubFolder": true
+            },
+            {
+              "_postman_id": "a6f90dea-2a71-492a-9fe0-68c471a9022b",
+              "name": "Order - Get itinerary M\u00e9tro Villiers - A\u00e9roport Orly",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "0c298ebc-95ca-4ce5-9c9e-9da35ce65e31",
+                    "exec": [
+                      "const retryCount = pm.environment.get('get_search_retry_count');",
+                      "pm.environment.set('get_search_retry_count', retryCount + 1);",
+                      "",
+                      "const json = pm.response.json();",
+                      "",
+                      "const utils = eval(globals.loadUtils);",
+                      "const itineraryUtils = eval(globals.itineraryUtils);",
+                      "",
+                      "",
+                      "if (json.status === 'IN_PROGRESS' && retryCount < 50) {",
+                      "    console.log(\"IN_PROGRESS\");",
+                      "",
+                      "    utils.alertWhenResponseCodeNotEqualTo(200);",
+                      "",
+                      "    utils.sleep(1000); // wait 1 seconde",
+                      "    postman.setNextRequest('Order - Get itinerary M\u00e9tro Villiers - A\u00e9roport Orly');",
+                      "",
+                      "} else if (json.status === 'COMPLETE') {",
+                      "    console.log(\"COMPLETE\");",
+                      "",
+                      "    const busDirectProposals = _.chain(json.results)",
+                      "        .map(({segments}) => segments)",
+                      "        .flatten()",
+                      "        .map(({proposals}) => proposals)",
+                      "        .flatten()",
+                      "        .filter(r => r)",
+                      "        .filter(({partner}) => partner === 'BUS_DIRECT')",
+                      "        .value();",
+                      "    ",
+                      "    if (busDirectProposals.length === 0) {",
+                      "        tests['ERROR : No bus direct proposal'] = false;",
+                      "    } else {",
+                      "        pm.environment.set('proposalId', busDirectProposals[0].id);",
+                      "    }",
+                      "}",
+                      "else{",
+                      "    tests['ERROR : Last response has a status \"NOT COMPLETE\"'] = false;",
+                      "}",
+                      ""
+                    ],
+                    "type": "text/javascript"
+                  }
+                },
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "id": "0a4d398d-5a31-46a9-9a86-afd121d8b683",
+                    "exec": [
+                      ""
+                    ],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "type": "text",
+                    "value": "application/xml"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/search/itinerary/{{searchId}}"
+              },
+              "response": []
             },
             {
               "_postman_id": "ff17039d-109c-4156-8a36-224c349ea014",
