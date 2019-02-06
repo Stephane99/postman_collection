@@ -6048,7 +6048,7 @@
                     },
                     {
                       "_postman_id": "3bbf1d15-fb04-43c4-a9ae-c4b30bf49348",
-                      "name": "Order - Post Order Copy",
+                      "name": "Order - Get Order",
                       "event": [
                         {
                           "listen": "prerequest",
@@ -6086,7 +6086,7 @@
                         }
                       ],
                       "request": {
-                        "method": "POST",
+                        "method": "GET",
                         "header": [
                           {
                             "key": "Content-Type",
@@ -6097,7 +6097,28 @@
                           "mode": "raw",
                           "raw": "{\n  \"customerId\": \"{{customerId}}\",\n  \"searchId\": \"{{searchId}}\",\n  \"proposalId\": \"{{proposalId}}\"\n}"
                         },
-                        "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/orders"
+                        "url": {
+                          "raw": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/orders/:orderId",
+                          "protocol": "https",
+                          "host": [
+                            "api",
+                            "maas-{{account}}",
+                            "aws",
+                            "vsct",
+                            "fr"
+                          ],
+                          "path": [
+                            "{{envName}}",
+                            "orders",
+                            ":orderId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "orderId",
+                              "value": ""
+                            }
+                          ]
+                        }
                       },
                       "response": []
                     }
