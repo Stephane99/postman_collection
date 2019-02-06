@@ -6005,21 +6005,16 @@
                       "",
                       "const utils = eval(globals.loadUtils);",
                       "utils.checkResponseCode(201);",
-                      "pm.test.skip(\"ORDER en cours de refonte\");",
                       "",
                       "pm.test(\"Order id in response\", function () {",
                       "    const orderId = json.orderId;",
                       "    pm.expect(orderId).to.match(/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/);",
                       "});",
                       "",
-                      "pm.test.skip(\"ORDER en cours de refonte\");",
-                      "",
                       "pm.test(\"Billet in response\", function () {",
                       "    const ebillet = json.transactions[0].partnerSpecificAttributes.ebillet;",
                       "    pm.expect(ebillet).to.match(/^[0-9]{38}$/);",
-                      "});",
-                      "",
-                      "pm.test.skip(\"ORDER en cours de refonte\");"
+                      "});"
                     ],
                     "type": "text/javascript"
                   }
