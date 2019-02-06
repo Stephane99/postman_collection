@@ -6274,7 +6274,124 @@
               "_postman_id": "8f5b306b-0feb-4ec3-a8e0-f40aeb04e570",
               "name": "Get Order",
               "description": "",
-              "item": [],
+              "item": [
+                {
+                  "_postman_id": "e4c5f806-2790-4048-a32e-5d28cf18ba80",
+                  "name": "Order not found",
+                  "description": "",
+                  "item": [
+                    {
+                      "_postman_id": "67b34b3d-8590-400b-9038-982d631166a0",
+                      "name": "Get Order - Order not found",
+                      "event": [
+                        {
+                          "listen": "prerequest",
+                          "script": {
+                            "id": "cf9587e9-5dd3-425a-87a6-ac1f44ed4298",
+                            "exec": [
+                              "const utils = eval(globals.loadUtils);",
+                              "utils.getToken(\"orders\", pm.environment.get(\"clientId\"), pm.environment.get(\"secret\"));"
+                            ],
+                            "type": "text/javascript"
+                          }
+                        },
+                        {
+                          "listen": "test",
+                          "script": {
+                            "id": "86fae201-1777-4c49-b2c0-1a2954ea1904",
+                            "exec": [
+                              "const json = pm.response.json();",
+                              "",
+                              "const utils = eval(globals.loadUtils);",
+                              "utils.checkResponseCode(200);",
+                              "",
+                              "pm.test(\"Order id in response\", function () {",
+                              "    const orderId = json.orderId;",
+                              "    pm.expect(orderId).to.match(/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/);",
+                              "});",
+                              "",
+                              "pm.test(\"Billet in response\", function () {",
+                              "    const ebillet = json.transactions[0].transactionAttributes.ebillet;",
+                              "    pm.expect(ebillet).to.match(/^[0-9]{38}$/);",
+                              "});",
+                              "",
+                              "pm.test(\"Contains Proposal id\", function () {",
+                              "    const proposalId = json.proposal.id;",
+                              "    pm.expect(proposalId).to.match(/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/);",
+                              "});",
+                              "",
+                              "pm.test(\"Contains Proposal partner\", function () {",
+                              "    const proposalPartner = json.proposal.partner;",
+                              "    pm.expect(proposalPartner).to.equal(\"BUS_DIRECT\");",
+                              "});",
+                              "",
+                              "pm.test(\"Contains Proposal price\", function () {",
+                              "    const proposalPrice = json.proposal.price.amount;",
+                              "    pm.expect(proposalPrice).to.equal(600);",
+                              "});",
+                              "",
+                              "pm.test(\"Contains Proposal fares price\", function () {",
+                              "    const faresPrice = json.proposal.fares[0].price.amount;",
+                              "    pm.expect(faresPrice).to.equal(600);",
+                              "});",
+                              "",
+                              "pm.test(\"Contains BUS DIRECT Segment\", function () {",
+                              "    const busDirectName = json.segment.busAttributes.line.name;",
+                              "    pm.expect(busDirectName).to.contains(\"BUS DIRECT\");",
+                              "});",
+                              "",
+                              "pm.test(\"Contains Customer id\", function () {",
+                              "    const customerId = json.customerId;",
+                              "    pm.expect(customerId).to.equal(pm.environment.get(\"customerId\"));",
+                              "});",
+                              "",
+                              ""
+                            ],
+                            "type": "text/javascript"
+                          }
+                        }
+                      ],
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": ""
+                        },
+                        "url": {
+                          "raw": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/orders/:id",
+                          "protocol": "https",
+                          "host": [
+                            "api",
+                            "maas-{{account}}",
+                            "aws",
+                            "vsct",
+                            "fr"
+                          ],
+                          "path": [
+                            "{{envName}}",
+                            "orders",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "{{orderId}}"
+                            }
+                          ]
+                        }
+                      },
+                      "response": []
+                    }
+                  ],
+                  "_postman_isSubFolder": true
+                }
+              ],
               "_postman_isSubFolder": true
             }
           ],
