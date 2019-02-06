@@ -6084,8 +6084,8 @@
                               "});",
                               "",
                               "pm.test(\"Contains Proposal id\", function () {",
-                              "    const ebillet = json.proposal.id;",
-                              "    pm.expect(ebillet).to.match(/^[0-9]{38}$/);",
+                              "    const proposalId = json.proposal.id;",
+                              "    pm.expect(proposalId).to.match(/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/);",
                               "});",
                               "proposal",
                               ""
