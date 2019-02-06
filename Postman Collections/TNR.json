@@ -5647,64 +5647,6 @@
           "description": "",
           "item": [
             {
-              "_postman_id": "6584972e-899e-43b3-af9f-eaffca4aab0e",
-              "name": "Error in Order Creation - Unauthorized",
-              "description": "",
-              "item": [],
-              "event": [
-                {
-                  "listen": "prerequest",
-                  "script": {
-                    "id": "955cff9c-abeb-4b65-8d21-326da49310bc",
-                    "type": "text/javascript",
-                    "exec": [
-                      ""
-                    ]
-                  }
-                },
-                {
-                  "listen": "test",
-                  "script": {
-                    "id": "639d654e-8df9-41b4-9e0f-7608a78164c6",
-                    "type": "text/javascript",
-                    "exec": [
-                      ""
-                    ]
-                  }
-                }
-              ],
-              "_postman_isSubFolder": true
-            },
-            {
-              "_postman_id": "7ea148b7-5e8e-40cb-b18b-338041e26a18",
-              "name": "Error in Order Creation - Unkown Customer",
-              "description": "",
-              "item": [],
-              "event": [
-                {
-                  "listen": "prerequest",
-                  "script": {
-                    "id": "714813dd-dbba-4370-a8aa-d05d3c5bd285",
-                    "type": "text/javascript",
-                    "exec": [
-                      ""
-                    ]
-                  }
-                },
-                {
-                  "listen": "test",
-                  "script": {
-                    "id": "6eb372f8-e607-4427-a973-af16501dd981",
-                    "type": "text/javascript",
-                    "exec": [
-                      ""
-                    ]
-                  }
-                }
-              ],
-              "_postman_isSubFolder": true
-            },
-            {
               "_postman_id": "2b1c49fc-dd5c-4f8b-84ce-336eec09b648",
               "name": "Error in Order Creation - Unkown Search",
               "description": "",
@@ -6148,6 +6090,64 @@
                       "listen": "test",
                       "script": {
                         "id": "8c23fd28-ee9c-4d12-8f5f-2349bac2d02c",
+                        "type": "text/javascript",
+                        "exec": [
+                          ""
+                        ]
+                      }
+                    }
+                  ],
+                  "_postman_isSubFolder": true
+                },
+                {
+                  "_postman_id": "6584972e-899e-43b3-af9f-eaffca4aab0e",
+                  "name": "Error in Order Creation - Unauthorized",
+                  "description": "",
+                  "item": [],
+                  "event": [
+                    {
+                      "listen": "prerequest",
+                      "script": {
+                        "id": "955cff9c-abeb-4b65-8d21-326da49310bc",
+                        "type": "text/javascript",
+                        "exec": [
+                          ""
+                        ]
+                      }
+                    },
+                    {
+                      "listen": "test",
+                      "script": {
+                        "id": "639d654e-8df9-41b4-9e0f-7608a78164c6",
+                        "type": "text/javascript",
+                        "exec": [
+                          ""
+                        ]
+                      }
+                    }
+                  ],
+                  "_postman_isSubFolder": true
+                },
+                {
+                  "_postman_id": "7ea148b7-5e8e-40cb-b18b-338041e26a18",
+                  "name": "Error in Order Creation - Unkown Customer",
+                  "description": "",
+                  "item": [],
+                  "event": [
+                    {
+                      "listen": "prerequest",
+                      "script": {
+                        "id": "714813dd-dbba-4370-a8aa-d05d3c5bd285",
+                        "type": "text/javascript",
+                        "exec": [
+                          ""
+                        ]
+                      }
+                    },
+                    {
+                      "listen": "test",
+                      "script": {
+                        "id": "6eb372f8-e607-4427-a973-af16501dd981",
                         "type": "text/javascript",
                         "exec": [
                           ""
