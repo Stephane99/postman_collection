@@ -6448,6 +6448,13 @@
               "description": "",
               "item": [],
               "_postman_isSubFolder": true
+            },
+            {
+              "_postman_id": "7ea148b7-5e8e-40cb-b18b-338041e26a18",
+              "name": "Error in Order creation",
+              "description": "",
+              "item": [],
+              "_postman_isSubFolder": true
             }
           ],
           "_postman_isSubFolder": true
