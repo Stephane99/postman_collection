@@ -6115,6 +6115,13 @@
               "description": "",
               "item": [],
               "_postman_isSubFolder": true
+            },
+            {
+              "_postman_id": "b117e726-0944-4fd1-9371-1e358fcfc177",
+              "name": "Error in Order Creation - Customer without Card",
+              "description": "",
+              "item": [],
+              "_postman_isSubFolder": true
             }
           ],
           "_postman_isSubFolder": true
