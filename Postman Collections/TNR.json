@@ -6046,7 +6046,7 @@
             },
             {
               "_postman_id": "6584972e-899e-43b3-af9f-eaffca4aab0e",
-              "name": "Error on Order Creation - Unauthorized",
+              "name": "Error in Order Creation - Unauthorized",
               "description": "",
               "item": [],
               "event": [
