@@ -6045,6 +6045,61 @@
                         "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/orders"
                       },
                       "response": []
+                    },
+                    {
+                      "_postman_id": "3bbf1d15-fb04-43c4-a9ae-c4b30bf49348",
+                      "name": "Order - Post Order Copy",
+                      "event": [
+                        {
+                          "listen": "prerequest",
+                          "script": {
+                            "id": "cf9587e9-5dd3-425a-87a6-ac1f44ed4298",
+                            "exec": [
+                              "const utils = eval(globals.loadUtils);",
+                              "utils.getToken(\"orders\", pm.environment.get(\"clientId\"), pm.environment.get(\"secret\"));"
+                            ],
+                            "type": "text/javascript"
+                          }
+                        },
+                        {
+                          "listen": "test",
+                          "script": {
+                            "id": "86fae201-1777-4c49-b2c0-1a2954ea1904",
+                            "exec": [
+                              "const json = pm.response.json();",
+                              "",
+                              "const utils = eval(globals.loadUtils);",
+                              "utils.checkResponseCode(201);",
+                              "",
+                              "pm.test(\"Order id in response\", function () {",
+                              "    const orderId = json.orderId;",
+                              "    pm.expect(orderId).to.match(/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/);",
+                              "});",
+                              "",
+                              "pm.test(\"Billet in response\", function () {",
+                              "    const ebillet = json.transactions[0].partnerSpecificAttributes.ebillet;",
+                              "    pm.expect(ebillet).to.match(/^[0-9]{38}$/);",
+                              "});"
+                            ],
+                            "type": "text/javascript"
+                          }
+                        }
+                      ],
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"customerId\": \"{{customerId}}\",\n  \"searchId\": \"{{searchId}}\",\n  \"proposalId\": \"{{proposalId}}\"\n}"
+                        },
+                        "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/orders"
+                      },
+                      "response": []
                     }
                   ],
                   "event": [
