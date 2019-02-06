@@ -6095,7 +6095,7 @@
                         ],
                         "body": {
                           "mode": "raw",
-                          "raw": "{\n  \"customerId\": \"{{customerId}}\",\n  \"searchId\": \"{{searchId}}\",\n  \"proposalId\": \"{{proposalId}}\"\n}"
+                          "raw": ""
                         },
                         "url": {
                           "raw": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/orders/:id",
