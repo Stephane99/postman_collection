@@ -6019,12 +6019,14 @@
                               "pm.test(\"Order id in response\", function () {",
                               "    const orderId = json.orderId;",
                               "    pm.expect(orderId).to.match(/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/);",
+                              "    pm.environment.set(\"orderId\", orderId);",
                               "});",
                               "",
                               "pm.test(\"Billet in response\", function () {",
                               "    const ebillet = json.transactions[0].partnerSpecificAttributes.ebillet;",
                               "    pm.expect(ebillet).to.match(/^[0-9]{38}$/);",
-                              "});"
+                              "});",
+                              ""
                             ],
                             "type": "text/javascript"
                           }
@@ -6079,7 +6081,14 @@
                               "pm.test(\"Billet in response\", function () {",
                               "    const ebillet = json.transactions[0].partnerSpecificAttributes.ebillet;",
                               "    pm.expect(ebillet).to.match(/^[0-9]{38}$/);",
-                              "});"
+                              "});",
+                              "",
+                              "pm.test(\"Contains Proposal id\", function () {",
+                              "    const ebillet = json.proposal.id;",
+                              "    pm.expect(ebillet).to.match(/^[0-9]{38}$/);",
+                              "});",
+                              "proposal",
+                              ""
                             ],
                             "type": "text/javascript"
                           }
@@ -6115,7 +6124,7 @@
                           "variable": [
                             {
                               "key": "id",
-                              "value": ""
+                              "value": "{{orderId}}"
                             }
                           ]
                         }
