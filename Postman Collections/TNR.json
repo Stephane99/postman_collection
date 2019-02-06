@@ -6098,7 +6098,7 @@
                           "raw": "{\n  \"customerId\": \"{{customerId}}\",\n  \"searchId\": \"{{searchId}}\",\n  \"proposalId\": \"{{proposalId}}\"\n}"
                         },
                         "url": {
-                          "raw": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/orders/:orderId",
+                          "raw": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/orders/:id",
                           "protocol": "https",
                           "host": [
                             "api",
@@ -6110,11 +6110,11 @@
                           "path": [
                             "{{envName}}",
                             "orders",
-                            ":orderId"
+                            ":id"
                           ],
                           "variable": [
                             {
-                              "key": "orderId",
+                              "key": "id",
                               "value": ""
                             }
                           ]
