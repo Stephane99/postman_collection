@@ -5648,7 +5648,7 @@
           "item": [
             {
               "_postman_id": "00660098-bb39-4a89-8aef-f48de9a9430e",
-              "name": "Create Order",
+              "name": "Create Order - Customer without Card",
               "description": "",
               "item": [
                 {
@@ -6040,6 +6040,28 @@
                     "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/orders"
                   },
                   "response": []
+                }
+              ],
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "id": "7cc904ee-6704-4c90-a520-e85fff9ced59",
+                    "type": "text/javascript",
+                    "exec": [
+                      ""
+                    ]
+                  }
+                },
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "8c23fd28-ee9c-4d12-8f5f-2349bac2d02c",
+                    "type": "text/javascript",
+                    "exec": [
+                      ""
+                    ]
+                  }
                 }
               ],
               "_postman_isSubFolder": true
