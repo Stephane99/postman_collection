@@ -5647,13 +5647,6 @@
           "description": "",
           "item": [
             {
-              "_postman_id": "0a7650c1-61f2-4f35-9b3e-c9caed105553",
-              "name": "Error in Order Creation - Unkown Proposal",
-              "description": "",
-              "item": [],
-              "_postman_isSubFolder": true
-            },
-            {
               "_postman_id": "d7cc2df3-5249-4c4f-bc2a-2ec0d07f22a6",
               "name": "Error in Order - Bad request",
               "description": "",
@@ -6153,6 +6146,13 @@
                 {
                   "_postman_id": "2b1c49fc-dd5c-4f8b-84ce-336eec09b648",
                   "name": "Error in Order Creation - Unkown Search",
+                  "description": "",
+                  "item": [],
+                  "_postman_isSubFolder": true
+                },
+                {
+                  "_postman_id": "0a7650c1-61f2-4f35-9b3e-c9caed105553",
+                  "name": "Error in Order Creation - Unkown Proposal",
                   "description": "",
                   "item": [],
                   "_postman_isSubFolder": true
