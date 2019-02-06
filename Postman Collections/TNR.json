@@ -5647,13 +5647,6 @@
           "description": "",
           "item": [
             {
-              "_postman_id": "8ff3f126-956e-4aed-a933-988b49b36389",
-              "name": "Error in Order - Different Channel",
-              "description": "",
-              "item": [],
-              "_postman_isSubFolder": true
-            },
-            {
               "_postman_id": "b69127bb-9af1-415d-9d80-52100aba6390",
               "name": "Create Order",
               "description": "",
@@ -6153,6 +6146,13 @@
                 {
                   "_postman_id": "d7cc2df3-5249-4c4f-bc2a-2ec0d07f22a6",
                   "name": "Error in Order - Bad request",
+                  "description": "",
+                  "item": [],
+                  "_postman_isSubFolder": true
+                },
+                {
+                  "_postman_id": "8ff3f126-956e-4aed-a933-988b49b36389",
+                  "name": "Error in Order - Different Channel",
                   "description": "",
                   "item": [],
                   "_postman_isSubFolder": true
