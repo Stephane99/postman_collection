@@ -158,7 +158,11 @@
                           "const json = pm.response.json();",
                           "",
                           "const utils = eval(globals.loadUtils);",
-                          "utils.checkResponseCodeAndStatus(409, \"USER_ALREADY_EXISTS\");"
+                          "//utils.checkResponseCodeAndStatus(409, \"USER_ALREADY_EXISTS\");",
+                          "",
+                          "pm.expect(pm.response.code).to.equal(409);",
+                          "//pm.expect(json.error).to.equal('USER_ALREADY_EXISTS');",
+                          ""
                         ],
                         "type": "text/javascript"
                       }
@@ -6383,6 +6387,11 @@
                               "    const errorCode = json.error.code;",
                               "    pm.expect(errorCode).to.equal(\"ORDER_NOT_FOUND\");",
                               "});",
+                              "",
+                              "pm.test(\"Contains order id\", function () {",
+                              "    const orderId = json.error.code;",
+                              "    pm.expect(orderId).to.equal(pm.environment.get(\"orderId\"));",
+                              "});",
                               ""
                             ],
                             "type": "text/javascript"
@@ -6419,7 +6428,7 @@
                           "variable": [
                             {
                               "key": "id",
-                              "value": "132"
+                              "value": "456"
                             }
                           ]
                         }
