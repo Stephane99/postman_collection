@@ -157,7 +157,7 @@
                         "exec": [
                           "const json = pm.response.json();",
                           "",
-                          "const utils = eval(globals.loadUtils);",
+                          "//const utils = eval(globals.loadUtils);",
                           "//utils.checkResponseCodeAndStatus(409, \"USER_ALREADY_EXISTS\");",
                           "",
                           "pm.expect(pm.response.code).to.equal(409);",
