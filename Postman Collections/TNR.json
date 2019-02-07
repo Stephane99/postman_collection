@@ -181,8 +181,7 @@
                       "mode": "raw",
                       "raw": "{\n\t\"email\": \"fcabrel@oui.sncf{{uniqueId}}\",\n\t\"firstName\": \"Francis{{uniqueId}}\",\n\t\"lastName\": \"CABREL{{uniqueId}}\",\n\t\"phoneNumber\": \"0687654321{{uniqueId}}\",\n\t\"externalId\": \"{{external_id}}\"\n}"
                     },
-                    "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/customers",
-                    "description": "Couvert par end2end js"
+                    "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/customers"
                   },
                   "response": []
                 }
