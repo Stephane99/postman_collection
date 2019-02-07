@@ -6306,7 +6306,7 @@
                               "utils.checkResponseCode(404);",
                               "",
                               "",
-                              "pm.test(\"Contains Order id\", function () {",
+                              "pm.test(\"Contains message 'ORDER_NOT_FOUND'\", function () {",
                               "    const errorCode = json.error.code;",
                               "    pm.expect(errorCode).to.equal(\"ORDER_NOT_FOUND\");",
                               "});",
