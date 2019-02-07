@@ -159,6 +159,7 @@
                           "",
                           "pm.test(\"Check error message = 'USER_ALREADY_EXISTS'\", function(){",
                           "    pm.expect(pm.response.code).to.equal(409);",
+                          "     console.log(json)",
                           "    pm.expect(json.error).to.equal('USER_ALREADY_EXISTS');",
                           "});"
                         ],
@@ -6388,10 +6389,12 @@
                               "    pm.expect(errorCode).to.equal(\"ORDER_NOT_FOUND\");",
                               "});",
                               "",
+                              "/*",
                               "pm.test(\"Contains order id\", function () {",
                               "    const orderId = json.error.code;",
                               "    pm.expect(orderId).to.equal(pm.environment.get(\"orderId\"));",
                               "});",
+                              "*/",
                               ""
                             ],
                             "type": "text/javascript"
