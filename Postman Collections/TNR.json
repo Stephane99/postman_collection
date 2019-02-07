@@ -127,7 +127,8 @@
                       "mode": "raw",
                       "raw": "{\n\t\"email\": \"adelon@oui.sncf\",\n\t\"firstName\": \"Alain\",\n\t\"lastName\": \"DELON\",\n\t\"phoneNumber\": \"+33612345678\",\n\t\"externalId\": \"{{external_id}}\"\n}"
                     },
-                    "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/customers"
+                    "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/customers",
+                    "description": "Couvert par end2end js"
                   },
                   "response": []
                 },
