@@ -6352,6 +6352,79 @@
                         }
                       },
                       "response": []
+                    },
+                    {
+                      "_postman_id": "a1dd1666-8468-46bd-abed-7adabc25a7bd",
+                      "name": "Get Order - Order not found Copy",
+                      "event": [
+                        {
+                          "listen": "prerequest",
+                          "script": {
+                            "id": "cf9587e9-5dd3-425a-87a6-ac1f44ed4298",
+                            "exec": [
+                              "const utils = eval(globals.loadUtils);",
+                              "utils.getToken(\"orders\", pm.environment.get(\"clientId\"), pm.environment.get(\"secret\"));"
+                            ],
+                            "type": "text/javascript"
+                          }
+                        },
+                        {
+                          "listen": "test",
+                          "script": {
+                            "id": "86fae201-1777-4c49-b2c0-1a2954ea1904",
+                            "exec": [
+                              "const json = pm.response.json();",
+                              "",
+                              "const utils = eval(globals.loadUtils);",
+                              "utils.checkResponseCode(404);",
+                              "",
+                              "",
+                              "pm.test(\"Contains message 'ORDER_NOT_FOUND'\", function () {",
+                              "    const errorCode = json.error.code;",
+                              "    pm.expect(errorCode).to.equal(\"ORDER_NOT_FOUND\");",
+                              "});",
+                              ""
+                            ],
+                            "type": "text/javascript"
+                          }
+                        }
+                      ],
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": ""
+                        },
+                        "url": {
+                          "raw": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/orders/:id",
+                          "protocol": "https",
+                          "host": [
+                            "api",
+                            "maas-{{account}}",
+                            "aws",
+                            "vsct",
+                            "fr"
+                          ],
+                          "path": [
+                            "{{envName}}",
+                            "orders",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "132"
+                            }
+                          ]
+                        }
+                      },
+                      "response": []
                     }
                   ],
                   "_postman_isSubFolder": true
