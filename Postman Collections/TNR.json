@@ -157,9 +157,10 @@
                         "exec": [
                           "const json = pm.response.json();",
                           "",
-                          "pm.expect(pm.response.code).to.equal(409);",
-                          "pm.expect(json.error).to.equal('USER_ALREADY_EXISTS');",
-                          ""
+                          "pm.test(\"Check error message = 'USER_ALREADY_EXISTS'\", function(){",
+                          "    pm.expect(pm.response.code).to.equal(409);",
+                          "    pm.expect(json.error).to.equal('USER_ALREADY_EXISTS');",
+                          "});"
                         ],
                         "type": "text/javascript"
                       }
@@ -2051,8 +2052,10 @@
                         "exec": [
                           "const json = pm.response.json();",
                           "",
-                          "const utils = eval(globals.loadUtils);",
-                          "utils.checkResponseCodeAndStatus(404, \"USER_NOT_FOUND\");"
+                          "pm.test(\"Check error message = 'USER_ALREADY_EXISTS'\", function(){",
+                          "    pm.expect(pm.response.code).to.equal(404);",
+                          "    pm.expect(json.error).to.equal('USER_NOT_FOUND');",
+                          "});"
                         ],
                         "type": "text/javascript"
                       }
