@@ -6191,35 +6191,6 @@
                   "_postman_isSubFolder": true
                 },
                 {
-                  "_postman_id": "7ea148b7-5e8e-40cb-b18b-338041e26a18",
-                  "name": "Error in Order Creation - Unkown Customer",
-                  "description": "",
-                  "item": [],
-                  "event": [
-                    {
-                      "listen": "prerequest",
-                      "script": {
-                        "id": "714813dd-dbba-4370-a8aa-d05d3c5bd285",
-                        "type": "text/javascript",
-                        "exec": [
-                          ""
-                        ]
-                      }
-                    },
-                    {
-                      "listen": "test",
-                      "script": {
-                        "id": "6eb372f8-e607-4427-a973-af16501dd981",
-                        "type": "text/javascript",
-                        "exec": [
-                          ""
-                        ]
-                      }
-                    }
-                  ],
-                  "_postman_isSubFolder": true
-                },
-                {
                   "_postman_id": "2b1c49fc-dd5c-4f8b-84ce-336eec09b648",
                   "name": "Error in Order Creation - Unkown Search",
                   "description": "",
