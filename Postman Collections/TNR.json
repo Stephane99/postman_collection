@@ -181,7 +181,8 @@
                       "mode": "raw",
                       "raw": "{\n\t\"email\": \"fcabrel@oui.sncf{{uniqueId}}\",\n\t\"firstName\": \"Francis{{uniqueId}}\",\n\t\"lastName\": \"CABREL{{uniqueId}}\",\n\t\"phoneNumber\": \"0687654321{{uniqueId}}\",\n\t\"externalId\": \"{{external_id}}\"\n}"
                     },
-                    "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/customers"
+                    "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/customers",
+                    "description": "Couvert par end2end js"
                   },
                   "response": []
                 }
@@ -265,7 +266,8 @@
                       "mode": "raw",
                       "raw": "{\n\t\"email\": \"gdepardieu@oui.sncf\",\n\t\"firstName\": \"G\u00e9rard\",\n\t\"lastName\": \"DEPARDIEU\",\n\t\"phoneNumber\": \"0611223344\",\n\t\"externalId\": \"{{external_id}}\"\n}"
                     },
-                    "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/customers"
+                    "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/customers",
+                    "description": "Couvert par end2end js"
                   },
                   "response": []
                 }
@@ -6179,35 +6181,6 @@
                       "listen": "test",
                       "script": {
                         "id": "8c23fd28-ee9c-4d12-8f5f-2349bac2d02c",
-                        "type": "text/javascript",
-                        "exec": [
-                          ""
-                        ]
-                      }
-                    }
-                  ],
-                  "_postman_isSubFolder": true
-                },
-                {
-                  "_postman_id": "6584972e-899e-43b3-af9f-eaffca4aab0e",
-                  "name": "Error in Order Creation - Unauthorized",
-                  "description": "",
-                  "item": [],
-                  "event": [
-                    {
-                      "listen": "prerequest",
-                      "script": {
-                        "id": "955cff9c-abeb-4b65-8d21-326da49310bc",
-                        "type": "text/javascript",
-                        "exec": [
-                          ""
-                        ]
-                      }
-                    },
-                    {
-                      "listen": "test",
-                      "script": {
-                        "id": "639d654e-8df9-41b4-9e0f-7608a78164c6",
                         "type": "text/javascript",
                         "exec": [
                           ""
