@@ -1787,7 +1787,8 @@
                       "mode": "raw",
                       "raw": "{\n\t\"email\": \"ihupert@oui.sncf\",\n\t\"firstName\": \"Isabelle\",\n\t\"lastName\": \"Hupert\",\n\t\"phoneNumber\": \"0606060606\",\n\t\"externalId\": \"{{external_id_1}}\"\n}"
                     },
-                    "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/customers"
+                    "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/customers",
+                    "description": "Couvert par end2end js"
                   },
                   "response": []
                 },
