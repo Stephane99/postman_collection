@@ -652,7 +652,8 @@
                       "mode": "raw",
                       "raw": "{\n\t\"email\": \"mfarmer@oui.sncf\",\n\t\"firstName\": \"Myl\u00e8ne\",\n\t\"lastName\": \"FARMER\",\n\t\"phoneNumber\": \"+33688776655\",\n\t\"externalId\": \"{{external_id}}\"\n}"
                     },
-                    "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/customers"
+                    "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/customers",
+                    "description": "Couvert par end2end js"
                   },
                   "response": []
                 },
@@ -788,7 +789,8 @@
                       "mode": "raw",
                       "raw": "{\n\t\"email\": \"leaseydoux@oui.sncf\",\n\t\"firstName\": \"Lea\",\n\t\"lastName\": \"SEYDOUX\",\n\t\"phoneNumber\": \"0601010101\",\n\t\"externalId\": \"{{external_id}}\"\n}"
                     },
-                    "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/customers"
+                    "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/customers",
+                    "description": "Couvert par end2end js"
                   },
                   "response": []
                 },
@@ -1053,7 +1055,8 @@
                           "value": "{{external_id}}"
                         }
                       ]
-                    }
+                    },
+                    "description": "Couvert par end2end js"
                   },
                   "response": []
                 },
