@@ -1275,7 +1275,8 @@
                       "mode": "raw",
                       "raw": "{\n\t\"email\": \"mlaroque@oui.sncf\",\n\t\"firstName\": \"Michelle\",\n\t\"lastName\": \"Laroque\",\n\t\"phoneNumber\": \"0602020202\",\n\t\"externalId\": \"{{external_id_1}}\"\n}"
                     },
-                    "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/customers"
+                    "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/customers",
+                    "description": "Couvert par end2end js"
                   },
                   "response": []
                 },
@@ -1585,7 +1586,8 @@
                       "mode": "raw",
                       "raw": "{\n\t\"email\": \"jbalasko@oui.sncf\",\n\t\"firstName\": \"Josiane\",\n\t\"lastName\": \"Balascko\",\n\t\"phoneNumber\": \"0604040404\",\n\t\"externalId\": \"{{external_id}}\"\n}"
                     },
-                    "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/customers"
+                    "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/customers",
+                    "description": "Couvert par end2end js"
                   },
                   "response": []
                 },
