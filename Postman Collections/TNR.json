@@ -2063,7 +2063,7 @@
                         "exec": [
                           "const json = pm.response.json();",
                           "",
-                          "pm.test(\"Check error message = 'USER_ALREADY_EXISTS'\", function(){",
+                          "pm.test(\"Check error message = 'USER_NOT_FOUND'\", function(){",
                           "    pm.expect(pm.response.code).to.equal(404);",
                           "    pm.expect(json.error).to.equal('USER_NOT_FOUND');",
                           "});"
