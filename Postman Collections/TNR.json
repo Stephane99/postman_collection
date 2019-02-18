@@ -2955,7 +2955,8 @@
                       "mode": "raw",
                       "raw": "{\n\t\"email\": \"cdeneuve@oui.sncf\",\n\t\"firstName\": \"Catherine\",\n\t\"lastName\": \"Deneuve\",\n\t\"phoneNumber\": \"0612121212\",\n\t\"externalId\": \"{{external_id}}\"\n}"
                     },
-                    "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/customers"
+                    "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/customers",
+                    "description": "Couvert par end2end js"
                   },
                   "response": []
                 },
@@ -2984,7 +2985,7 @@
                           "utils.checkResponseCodeAndType(400, \"BAD_REQUEST_BODY\");",
                           "",
                           "// TODO : Test d\u00e9sactiv\u00e9, \u00e0 remettre lorsque l'ano sera corrig\u00e9e",
-                          "//utils.checkResponseMessage(\"\\\"lastName\\\" is not allowed to be empty\");",
+                          "//utils.checkResponseMessage('[string \\\"\\\" is not a valid email address]');",
                           "//pm.test.skip(\"=> BUG JIRA MAAS-xxx\");",
                           ""
                         ],
@@ -3313,7 +3314,8 @@
                       "mode": "raw",
                       "raw": "{\n\t\"email\": \"cdeneuve@oui.sncf\",\n\t\"firstName\": \"Catherine\",\n\t\"lastName\": \"Deneuve\",\n\t\"phoneNumber\": \"0612121212\",\n\t\"externalId\": \"{{external_id}}\"\n}"
                     },
-                    "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/customers"
+                    "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/customers",
+                    "description": "Couvert par end2end js"
                   },
                   "response": []
                 },
