@@ -345,7 +345,8 @@
                       "mode": "raw",
                       "raw": "{\n\t\"email\": \"adelon@oui.sncf\",\n\t\"firstName\": \"\",\n\t\"lastName\": \"DELON\",\n\t\"phoneNumber\": \"0612345678\",\n\t\"externalId\": \"{{external_id}}\"\n}"
                     },
-                    "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/customers"
+                    "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/customers",
+                    "description": "Couvert par end2end js"
                   },
                   "response": []
                 },
@@ -592,7 +593,8 @@
                       "mode": "raw",
                       "raw": "{\n\t\"email\": \"gdepardieu_oui.sncf\",\n\t\"firstName\": \"G\u00e9rard\",\n\t\"lastName\": \"DEPARDIEU\",\n\t\"phoneNumber\": \"0611223344\",\n\t\"externalId\": \"{{external_id}}\"\n}"
                     },
-                    "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/customers"
+                    "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/customers",
+                    "description": "Couvert par end2end js"
                   },
                   "response": []
                 }
@@ -4219,7 +4221,8 @@
                           "mode": "raw",
                           "raw": "{\n  \"origin\": {\n    \"latitude\": 48.881365,\n    \"longitude\": 2.315047\n  },\n  \"destination\": {\n    \"latitude\": 48.732702,\n    \"longitude\": 2.364299\n  },\n  \"searchDate\": \"{{itinerary_search_date}}\"\n}\n"
                         },
-                        "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/search/itinerary"
+                        "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/search/itinerary",
+                        "description": "Couvert par end2end js"
                       },
                       "response": [
                         {
