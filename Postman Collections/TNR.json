@@ -5536,7 +5536,7 @@
                   "        },",
                   "",
                   "        proposalSchema: {",
-                  "            \"required\" : [ \"partner\", \"price\", \"id\", \"label\", \"validity\", \"carWithDriverAttributes\", \"fares\"],",
+                  "            \"required\" : [ \"partner\", \"price\", \"id\", \"label\", \"validity\", \"carWithDriverAttributes\", \"fares\", \"titi\"],",
                   "            \"properties\": {",
                   "                \"partner\": {",
                   "                    \"type\": \"string\",",
