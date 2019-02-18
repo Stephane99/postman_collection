@@ -4536,7 +4536,8 @@
                           "mode": "raw",
                           "raw": "{\n  \"origin\": {\n    \"latitude\": 48.881365,\n    \"longitude\": 2.315047\n  },\n  \"destination\": {\n    \"latitude\": 49.022331,\n    \"longitude\": 2.549546\n  },\n  \"searchDate\": \"{{itinerary_search_date}}\"\n}\n"
                         },
-                        "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/search/itinerary"
+                        "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/search/itinerary",
+                        "description": "Couvert par end2end js"
                       },
                       "response": [
                         {
@@ -4880,7 +4881,8 @@
                           "mode": "raw",
                           "raw": "{\n  \"origin\": {\n    \"latitude\": 48.881365,\n    \"longitude\": 2.315047\n  },\n  \"destination\": {\n    \"latitude\": 43.303730,\n    \"longitude\": 5.380142\n  },\n  \"searchDate\": \"{{itinerary_search_date}}\"\n}\n"
                         },
-                        "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/search/itinerary"
+                        "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/search/itinerary",
+                        "description": "Couvert par end2end js"
                       },
                       "response": [
                         {
