@@ -2184,7 +2184,8 @@
                       "mode": "raw",
                       "raw": "{\n\t\"email\": \"mlaurent@oui.sncf\",\n\t\"firstName\": \"M\u00e9lanie\",\n\t\"lastName\": \"Laurent\",\n\t\"phoneNumber\": \"0608080808\",\n\t\"externalId\": \"{{external_id_1}}\"\n}"
                     },
-                    "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/customers"
+                    "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/customers",
+                    "description": "Couvert par end2end js"
                   },
                   "response": []
                 },
@@ -2802,7 +2803,8 @@
                       "mode": "raw",
                       "raw": "{\n\t\"email\": \"cdeneuve@oui.sncf\",\n\t\"firstName\": \"Catherine\",\n\t\"lastName\": \"Deneuve\",\n\t\"phoneNumber\": \"0612121212\",\n\t\"externalId\": \"{{external_id_1}}\"\n}"
                     },
-                    "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/customers"
+                    "url": "https://api.maas-{{account}}.aws.vsct.fr/{{envName}}/customers",
+                    "description": "Couvert par end2end js"
                   },
                   "response": []
                 },
@@ -2842,7 +2844,7 @@
                     "auth": {
                       "type": "noauth"
                     },
-                    "method": "GET",
+                    "method": "PUT",
                     "header": [
                       {
                         "key": "Content-Type",
